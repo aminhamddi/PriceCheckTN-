@@ -1,250 +1,181 @@
 """
-FastAPI Main Application
+FastAPI with BERT Model
 """
 
-from fastapi import FastAPI, HTTPException, status
-from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
-from api.config import settings
-from api.models import (
-    ReviewInput,
-    PredictionResponse,
-    HealthResponse,
-    ErrorResponse
-)
-from api.ml_model import get_model
+from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel
+from api.models.bert_predictor import BERTFakeReviewPredictor, EnsemblePredictor
 from loguru import logger
 import sys
-from datetime import datetime
+from pathlib import Path
 
-# Configure logging
+# Setup logging
 logger.remove()
-logger.add(
-    sys.stdout,
-    format="<green>{time:HH:mm:ss}</green> | <level>{level:8}</level> | <level>{message}</level>",
-    level="INFO"
-)
-logger.add(
-    "logs/api.log",
-    rotation="10 MB",
-    retention="7 days",
-    level="DEBUG"
-)
+logger.add(sys.stdout, level="INFO")
 
-# Create FastAPI app
+# Create app
 app = FastAPI(
-    title=settings.app_name,
-    version=settings.version,
-    description=settings.description,
-    docs_url="/docs",
-    redoc_url="/redoc"
+    title="PriceCheck TN - Fake Review Detection API",
+    description="Detect fake reviews using BERT + ML",
+    version="2.0.0"
 )
 
-# CORS Middleware
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=settings.cors_origins,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+# Global predictor (loaded once at startup)
+predictor = None
 
 
 @app.on_event("startup")
-async def startup_event():
+async def load_model():
     """Load model on startup"""
-    logger.info("🚀 Starting FastAPI application")
-    logger.info(f"📋 Version: {settings.version}")
+    global predictor
 
-    try:
-        model = get_model()
-        logger.success("✅ Model loaded successfully")
-    except Exception as e:
-        logger.error(f"❌ Failed to load model: {e}")
-        raise
+    logger.info("🚀 Starting API...")
+
+    # Check if BERT model exists
+    bert_model_path = Path("models/saved_models/bert_fake_review/final_model")
+    sklearn_model_path = Path("models/saved_models/sklearn_baseline/model.pkl")
+
+    if bert_model_path.exists():
+        logger.info("📦 Loading BERT model...")
+
+        if sklearn_model_path.exists():
+            # Load ensemble
+            predictor = EnsemblePredictor(
+                bert_path=str(bert_model_path),
+                sklearn_path=str(sklearn_model_path)
+            )
+            logger.success("✅ Ensemble predictor loaded (BERT + Sklearn)")
+        else:
+            # BERT only
+            predictor = BERTFakeReviewPredictor(model_path=str(bert_model_path))
+            logger.success("✅ BERT predictor loaded")
+    else:
+        logger.error("❌ BERT model not found!")
+        logger.info("💡 Place model in: models/saved_models/bert_fake_review/final_model")
+        raise FileNotFoundError("BERT model not found")
 
 
-@app.on_event("shutdown")
-async def shutdown_event():
-    """Cleanup on shutdown"""
-    logger.info("👋 Shutting down FastAPI application")
+# Request/Response models
+class ReviewRequest(BaseModel):
+    text: str
+    method: str = "bert_only"  # 'bert_only', 'sklearn_only', or 'ensemble'
+
+    class Config:
+        schema_extra = {
+            "example": {
+                "text": "This product is amazing! Best purchase ever!!!",
+                "method": "bert_only"
+            }
+        }
 
 
-@app.get("/", tags=["Root"])
+class PredictionResponse(BaseModel):
+    prediction: str
+    confidence: float
+    probabilities: dict
+    model: str
+    details: dict = None
+
+
+@app.get("/")
 async def root():
     """Root endpoint"""
     return {
-        "message": "PriceCheck TN - Fake Review Detector API",
-        "version": settings.version,
-        "docs": "/docs",
-        "health": "/health"
+        "message": "PriceCheck TN - Fake Review Detection API",
+        "version": "2.0.0",
+        "model": "BERT Fine-tuned",
+        "docs": "/docs"
     }
 
 
-@app.get(
-    "/health",
-    response_model=HealthResponse,
-    tags=["Health"]
-)
-async def health_check():
-    """
-    Health check endpoint
+@app.get("/health")
+async def health():
+    """Health check"""
+    return {
+        "status": "healthy",
+        "model_loaded": predictor is not None,
+        "model_type": type(predictor).__name__
+    }
 
-    Returns API status and model availability
+
+@app.post("/predict", response_model=PredictionResponse)
+async def predict(request: ReviewRequest):
     """
+    Predict if a review is fake or real
+
+    - **text**: Review text to analyze
+    - **method**: Prediction method ('bert_only', 'sklearn_only', 'ensemble')
+    """
+    if predictor is None:
+        raise HTTPException(status_code=503, detail="Model not loaded")
+
+    if not request.text or len(request.text.strip()) < 10:
+        raise HTTPException(status_code=400, detail="Review text too short (min 10 chars)")
+
     try:
-        model = get_model()
-        model_loaded = model.is_loaded()
+        logger.info(f"🔍 Analyzing review (method: {request.method})")
 
-        return HealthResponse(
-            status="healthy" if model_loaded else "degraded",
-            model_loaded=model_loaded,
-            version=settings.version
-        )
-    except Exception as e:
-        logger.error(f"Health check failed: {e}")
-        return HealthResponse(
-            status="unhealthy",
-            model_loaded=False,
-            version=settings.version
-        )
+        # Check if ensemble or single model
+        if isinstance(predictor, EnsemblePredictor):
+            result = predictor.predict(request.text, method=request.method)
+        else:
+            result = predictor.predict_single(request.text)
 
+        logger.info(f"🎯 Prediction: {result['prediction']} (confidence: {result['confidence']:.2f}%)")
 
-@app.post(
-    "/predict",
-    response_model=PredictionResponse,
-    responses={
-        200: {"description": "Successful prediction"},
-        400: {"model": ErrorResponse, "description": "Bad request"},
-        500: {"model": ErrorResponse, "description": "Internal server error"}
-    },
-    tags=["Prediction"]
-)
-async def predict_fake_review(review: ReviewInput):
-    """
-    Predict if a review is fake
-
-    Analyzes the review text using ML model and returns prediction with confidence score.
-
-    - **text**: Review text to analyze (10-5000 characters)
-    - **language**: Optional language code (fr, ar, en). Auto-detected if not provided
-    - **rating**: Optional review rating (1-5 stars)
-    - **product_id**: Optional product identifier for tracking
-    """
-    try:
-        logger.info(f"📝 Received prediction request (length: {len(review.text)} chars)")
-
-        # Get model
-        model = get_model()
-
-        # Make prediction
-        is_fake, confidence, fake_prob, detected_lang, features = model.predict(
-            text=review.text,
-            language=review.language,
-            rating=review.rating
-        )
-
-        # Log result
-        result = "FAKE" if is_fake else "REAL"
-        logger.info(f"🎯 Prediction: {result} (confidence: {confidence:.2%})")
-
-        # Build response
-        response = PredictionResponse(
-            is_fake=is_fake,
-            confidence=confidence,
-            fake_probability=fake_prob,
-            real_probability=1.0 - fake_prob,
-            language_detected=detected_lang,
-            features=features if settings.debug else None,
-            model_version=model.model_version
-        )
-
-        return response
-
-    except ValueError as e:
-        logger.warning(f"⚠️  Validation error: {e}")
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=str(e)
-        )
+        return result
 
     except Exception as e:
         logger.error(f"❌ Prediction error: {e}")
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Internal server error during prediction"
-        )
+        raise HTTPException(status_code=500, detail=str(e))
 
 
-@app.post(
-    "/predict/batch",
-    response_model=list[PredictionResponse],
-    tags=["Prediction"]
-)
-async def predict_batch(reviews: list[ReviewInput]):
+@app.post("/predict/batch")
+async def predict_batch(texts: list[str]):
     """
-    Batch prediction for multiple reviews
-
-    Analyzes multiple reviews in a single request.
-    Limited to 100 reviews per request.
+    Predict on multiple reviews at once
     """
-    if len(reviews) > 100:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail="Maximum 100 reviews per batch request"
-        )
+    if predictor is None:
+        raise HTTPException(status_code=503, detail="Model not loaded")
 
-    logger.info(f"📦 Batch prediction request ({len(reviews)} reviews)")
+    if not texts:
+        raise HTTPException(status_code=400, detail="No texts provided")
 
-    results = []
-    model = get_model()
+    try:
+        logger.info(f"🔍 Analyzing {len(texts)} reviews")
 
-    for idx, review in enumerate(reviews):
-        try:
-            is_fake, confidence, fake_prob, detected_lang, features = model.predict(
-                text=review.text,
-                language=review.language,
-                rating=review.rating
-            )
+        # Use BERT batch prediction
+        if isinstance(predictor, EnsemblePredictor):
+            results = predictor.bert_predictor.predict_batch(texts)
+        else:
+            results = predictor.predict_batch(texts)
 
-            results.append(PredictionResponse(
-                is_fake=is_fake,
-                confidence=confidence,
-                fake_probability=fake_prob,
-                real_probability=1.0 - fake_prob,
-                language_detected=detected_lang,
-                model_version=model.model_version
-            ))
-
-        except Exception as e:
-            logger.error(f"Error processing review {idx}: {e}")
-            # Continue with other reviews
-            continue
-
-    logger.success(f"✅ Batch complete: {len(results)}/{len(reviews)} successful")
-    return results
-
-
-@app.exception_handler(Exception)
-async def global_exception_handler(request, exc):
-    """Global exception handler"""
-    logger.error(f"Unhandled exception: {exc}")
-    return JSONResponse(
-        status_code=500,
-        content={
-            "error": "Internal server error",
-            "detail": str(exc) if settings.debug else "An error occurred",
-            "timestamp": datetime.now().isoformat()
+        return {
+            "count": len(results),
+            "predictions": results
         }
-    )
+
+    except Exception as e:
+        logger.error(f"❌ Batch prediction error: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/model/info")
+async def model_info():
+    """Get model information"""
+    if predictor is None:
+        return {"model_loaded": False}
+
+    return {
+        "model_loaded": True,
+        "model_type": type(predictor).__name__,
+        "device": str(predictor.bert_predictor.device) if hasattr(predictor, 'bert_predictor') else str(predictor.device),
+        "model_name": "DistilBERT Multilingual",
+        "num_labels": 2,
+        "labels": {"0": "REAL", "1": "FAKE"}
+    }
 
 
 if __name__ == "__main__":
     import uvicorn
-
-    uvicorn.run(
-        "api.main:app",
-        host=settings.host,
-        port=settings.port,
-        reload=settings.debug
-    )
+    uvicorn.run(app, host="0.0.0.0", port=8000)
