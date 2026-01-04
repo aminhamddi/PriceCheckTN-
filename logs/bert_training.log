@@ -1,0 +1,789 @@
+2026-01-04 02:22:18.662 | INFO     | __main__:main:49 - 
+📦 Preparing datasets...
+2026-01-04 02:22:18.689 | INFO     | models.bert.dataset:prepare_datasets_from_csv:92 - 📥 Loading data from data/raw/reviews/fake_reviews.csv
+2026-01-04 02:22:18.869 | INFO     | models.bert.dataset:prepare_datasets_from_csv:97 - ✓ Loaded 40432 reviews
+2026-01-04 02:22:18.870 | INFO     | models.bert.dataset:prepare_datasets_from_csv:98 - ✓ Columns: ['category', 'rating', 'label', 'text_']
+2026-01-04 02:22:18.881 | INFO     | models.bert.dataset:prepare_datasets_from_csv:108 - ✓ Unique labels: ['CG' 'OR']
+2026-01-04 02:22:18.885 | INFO     | models.bert.dataset:prepare_datasets_from_csv:115 - ✓ Label mapping: {'CG': 0, 'OR': 1}
+2026-01-04 02:22:18.912 | INFO     | models.bert.dataset:prepare_datasets_from_csv:131 - ✓ Train size: 32345
+2026-01-04 02:22:18.913 | INFO     | models.bert.dataset:prepare_datasets_from_csv:132 - ✓ Test size: 8087
+2026-01-04 02:23:37.100 | ERROR    | __main__:<module>:111 - ❌ Error: We couldn't connect to 'https://huggingface.co' to load this file, couldn't find it in the cached files and it looks like distilbert-base-multilingual-cased is not the path to a directory containing a file named config.json.
+Checkout your internet connection or see how to run the library in offline mode at 'https://huggingface.co/docs/transformers/installation#offline-mode'.
+Traceback (most recent call last):
+
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\urllib3\connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+           │          └ <function create_connection at 0x00000120877849A0>
+           └ <module 'urllib3.util.connection' from 'C:\\Users\\Ce-PC\\Desktop\\PriceCheckTN\\pricecheck-ml\\venv311\\Lib\\site-packages\\...
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               │      │           │     │     │       │      └ <SocketKind.SOCK_STREAM: 1>
+               │      │           │     │     │       └ <module 'socket' from 'C:\\Program Files\\Python311\\Lib\\socket.py'>
+               │      │           │     │     └ <AddressFamily.AF_UNSPEC: 0>
+               │      │           │     └ 443
+               │      │           └ 'huggingface.co'
+               │      └ <function getaddrinfo at 0x00000120F1011940>
+               └ <module 'socket' from 'C:\\Program Files\\Python311\\Lib\\socket.py'>
+  File "C:\Program Files\Python311\Lib\socket.py", line 962, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               │       │           │     │     │       │     │      └ 0
+               │       │           │     │     │       │     └ 0
+               │       │           │     │     │       └ <SocketKind.SOCK_STREAM: 1>
+               │       │           │     │     └ <AddressFamily.AF_UNSPEC: 0>
+               │       │           │     └ 443
+               │       │           └ 'huggingface.co'
+               │       └ <built-in function getaddrinfo>
+               └ <module '_socket' from 'C:\\Program Files\\Python311\\DLLs\\_socket.pyd'>
+
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               │    └ <function HTTPConnectionPool._make_request at 0x0000012087A5DC60>
+               └ <urllib3.connectionpool.HTTPSConnectionPool object at 0x000001209BD31910>
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+          └ NameResolutionError("HTTPSConnection(host='huggingface.co', port=443): Failed to resolve 'huggingface.co' ([Errno 11001] geta...
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+    │    │              └ <HTTPSConnection(host='huggingface.co', port=443) at 0x1209bd336d0>
+    │    └ <function HTTPSConnectionPool._validate_conn at 0x0000012087A5E200>
+    └ <urllib3.connectionpool.HTTPSConnectionPool object at 0x000001209BD31910>
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+    │    └ <function HTTPSConnection.connect at 0x0000012087A55C60>
+    └ <HTTPSConnection(host='huggingface.co', port=443) at 0x1209bd336d0>
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\urllib3\connection.py", line 759, in connect
+    self.sock = sock = self._new_conn()
+    │    │             │    └ <function HTTPConnection._new_conn at 0x0000012087A55260>
+    │    │             └ <HTTPSConnection(host='huggingface.co', port=443) at 0x1209bd336d0>
+    │    └ None
+    └ <HTTPSConnection(host='huggingface.co', port=443) at 0x1209bd336d0>
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\urllib3\connection.py", line 211, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+          │                   │    │     └ <HTTPSConnection(host='huggingface.co', port=443) at 0x1209bd336d0>
+          │                   │    └ <property object at 0x000001208668B060>
+          │                   └ <HTTPSConnection(host='huggingface.co', port=443) at 0x1209bd336d0>
+          └ <class 'urllib3.exceptions.NameResolutionError'>
+
+urllib3.exceptions.NameResolutionError: HTTPSConnection(host='huggingface.co', port=443): Failed to resolve 'huggingface.co' ([Errno 11001] getaddrinfo failed)
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\requests\adapters.py", line 486, in send
+    resp = conn.urlopen(
+           │    └ <function HTTPConnectionPool.urlopen at 0x0000012087A5DE40>
+           └ <urllib3.connectionpool.HTTPSConnectionPool object at 0x000001209BD31910>
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              │       └ <function Retry.increment at 0x0000012087787100>
+              └ Retry(total=0, connect=None, read=False, redirect=None, status=None)
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+          │             │      │    │            └ NameResolutionError("HTTPSConnection(host='huggingface.co', port=443): Failed to resolve 'huggingface.co' ([Errno 11001] geta...
+          │             │      │    └ NameResolutionError("HTTPSConnection(host='huggingface.co', port=443): Failed to resolve 'huggingface.co' ([Errno 11001] geta...
+          │             │      └ '/distilbert-base-multilingual-cased/resolve/main/config.json'
+          │             └ <urllib3.connectionpool.HTTPSConnectionPool object at 0x000001209BD31910>
+          └ <class 'urllib3.exceptions.MaxRetryError'>
+
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /distilbert-base-multilingual-cased/resolve/main/config.json (Caused by NameResolutionError("HTTPSConnection(host='huggingface.co', port=443): Failed to resolve 'huggingface.co' ([Errno 11001] getaddrinfo failed)"))
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\huggingface_hub\file_download.py", line 1543, in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+               └ <function get_hf_file_metadata at 0x0000012087D5D580>
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\huggingface_hub\utils\_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           │   │       └ {'url': 'https://huggingface.co/distilbert-base-multilingual-cased/resolve/main/config.json', 'proxies': None, 'timeout': 10,...
+           │   └ ()
+           └ <function get_hf_file_metadata at 0x0000012087D5D440>
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\huggingface_hub\file_download.py", line 1460, in get_hf_file_metadata
+    r = _request_wrapper(
+        └ <function _request_wrapper at 0x0000012087D5C860>
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\huggingface_hub\file_download.py", line 283, in _request_wrapper
+    response = _request_wrapper(
+               └ <function _request_wrapper at 0x0000012087D5C860>
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\huggingface_hub\file_download.py", line 306, in _request_wrapper
+    response = http_backoff(method=method, url=url, **params)
+               │                   │           │      └ {'headers': {'user-agent': 'unknown/None; hf_hub/0.36.0; python/3.11.9; torch/2.2.0; transformers/4.36.0; session_id/c663987e...
+               │                   │           └ 'https://huggingface.co/distilbert-base-multilingual-cased/resolve/main/config.json'
+               │                   └ 'HEAD'
+               └ <function http_backoff at 0x0000012087D44E00>
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\huggingface_hub\utils\_http.py", line 325, in http_backoff
+    raise err
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\huggingface_hub\utils\_http.py", line 306, in http_backoff
+    response = session.request(method=method, url=url, **kwargs)
+               │       │              │           │      └ {'headers': {'user-agent': 'unknown/None; hf_hub/0.36.0; python/3.11.9; torch/2.2.0; transformers/4.36.0; session_id/c663987e...
+               │       │              │           └ 'https://huggingface.co/distilbert-base-multilingual-cased/resolve/main/config.json'
+               │       │              └ 'HEAD'
+               │       └ <function Session.request at 0x0000012087BDE200>
+               └ <requests.sessions.Session object at 0x000001209BD2FD50>
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           │    │    │       └ {'timeout': 10, 'allow_redirects': False, 'proxies': OrderedDict(), 'stream': False, 'verify': True, 'cert': None}
+           │    │    └ <PreparedRequest [HEAD]>
+           │    └ <function Session.send at 0x0000012087BDE700>
+           └ <requests.sessions.Session object at 0x000001209BD2FD50>
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        │       │    │          └ {'timeout': 10, 'proxies': OrderedDict(), 'stream': False, 'verify': True, 'cert': None}
+        │       │    └ <PreparedRequest [HEAD]>
+        │       └ <function UniqueRequestIdAdapter.send at 0x0000012087D44360>
+        └ <huggingface_hub.utils._http.UniqueRequestIdAdapter object at 0x000001209BD30790>
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\huggingface_hub\utils\_http.py", line 95, in send
+    return super().send(request, *args, **kwargs)
+                        │         │       └ {'timeout': 10, 'proxies': OrderedDict(), 'stream': False, 'verify': True, 'cert': None}
+                        │         └ ()
+                        └ <PreparedRequest [HEAD]>
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+          │                          └ <PreparedRequest [HEAD]>
+          └ <class 'requests.exceptions.ConnectionError'>
+
+requests.exceptions.ConnectionError: (MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /distilbert-base-multilingual-cased/resolve/main/config.json (Caused by NameResolutionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to resolve \'huggingface.co\' ([Errno 11001] getaddrinfo failed)"))'), '(Request ID: 1ad7c8da-9cb5-4808-9a7a-a730de2a1f36)')
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\transformers\utils\hub.py", line 389, in cached_file
+    resolved_file = hf_hub_download(
+                    └ <function hf_hub_download at 0x0000012087D5D120>
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\huggingface_hub\utils\_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           │   │       └ {'subfolder': None, 'repo_type': None, 'revision': None, 'cache_dir': 'C:\\Users\\Ce-PC\\.cache\\huggingface\\hub', 'user_age...
+           │   └ ('distilbert-base-multilingual-cased', 'config.json')
+           └ <function hf_hub_download at 0x0000012087D5CFE0>
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\huggingface_hub\file_download.py", line 1007, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+           └ <function _hf_hub_download_to_cache_dir at 0x0000012087D5D080>
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\huggingface_hub\file_download.py", line 1114, in _hf_hub_download_to_cache_dir
+    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+    │                         │                │               └ False
+    │                         │                └ False
+    │                         └ ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /distil...
+    └ <function _raise_on_head_call_error at 0x0000012087D5D620>
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\huggingface_hub\file_download.py", line 1658, in _raise_on_head_call_error
+    raise LocalEntryNotFoundError(
+          └ <class 'huggingface_hub.errors.LocalEntryNotFoundError'>
+
+huggingface_hub.errors.LocalEntryNotFoundError: An error happened while trying to locate the file on the Hub and we cannot find the requested files in the local cache. Please check your connection and try again or make sure your Internet connection is on.
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+> File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\scripts\train_bert.py", line 107, in <module>
+    main()
+    └ <function main at 0x00000120EEEB04A0>
+
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\scripts\train_bert.py", line 51, in main
+    train_dataset, test_dataset, label_mapping = prepare_datasets_from_csv(
+                                                 └ <function prepare_datasets_from_csv at 0x00000120EF0BE2A0>
+
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\models\bert\dataset.py", line 135, in prepare_datasets_from_csv
+    train_dataset = FakeReviewDataset(
+                    └ <class 'models.bert.dataset.FakeReviewDataset'>
+
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\models\bert\dataset.py", line 35, in __init__
+    self.tokenizer = AutoTokenizer.from_pretrained(tokenizer_name)
+    │                │             │               └ 'distilbert-base-multilingual-cased'
+    │                │             └ <classmethod(<function AutoTokenizer.from_pretrained at 0x0000012088175620>)>
+    │                └ <class 'transformers.models.auto.tokenization_auto.AutoTokenizer'>
+    └ <models.bert.dataset.FakeReviewDataset object at 0x000001209B244790>
+
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\transformers\models\auto\tokenization_auto.py", line 752, in from_pretrained
+    config = AutoConfig.from_pretrained(
+             │          └ <classmethod(<function AutoConfig.from_pretrained at 0x00000120881747C0>)>
+             └ <class 'transformers.models.auto.configuration_auto.AutoConfig'>
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\transformers\models\auto\configuration_auto.py", line 1082, in from_pretrained
+    config_dict, unused_kwargs = PretrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)
+                                 │                │               │                                └ {'_from_auto': True, 'name_or_path': 'distilbert-base-multilingual-cased'}
+                                 │                │               └ 'distilbert-base-multilingual-cased'
+                                 │                └ <classmethod(<function PretrainedConfig.get_config_dict at 0x0000012088136DE0>)>
+                                 └ <class 'transformers.configuration_utils.PretrainedConfig'>
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\transformers\configuration_utils.py", line 644, in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+                          │   │                │                                └ {'_from_auto': True, 'name_or_path': 'distilbert-base-multilingual-cased'}
+                          │   │                └ 'distilbert-base-multilingual-cased'
+                          │   └ <classmethod(<function PretrainedConfig._get_config_dict at 0x0000012088136E80>)>
+                          └ <class 'transformers.configuration_utils.PretrainedConfig'>
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\transformers\configuration_utils.py", line 699, in _get_config_dict
+    resolved_config_file = cached_file(
+                           └ <function cached_file at 0x0000012087E9D300>
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\transformers\utils\hub.py", line 429, in cached_file
+    raise EnvironmentError(
+
+OSError: We couldn't connect to 'https://huggingface.co' to load this file, couldn't find it in the cached files and it looks like distilbert-base-multilingual-cased is not the path to a directory containing a file named config.json.
+Checkout your internet connection or see how to run the library in offline mode at 'https://huggingface.co/docs/transformers/installation#offline-mode'.
+2026-01-04 02:28:51.210 | INFO     | __main__:main:49 - 
+📦 Preparing datasets...
+2026-01-04 02:28:51.228 | INFO     | models.bert.dataset:prepare_datasets_from_csv:92 - 📥 Loading data from data/raw/reviews/fake_reviews.csv
+2026-01-04 02:28:51.386 | INFO     | models.bert.dataset:prepare_datasets_from_csv:97 - ✓ Loaded 40432 reviews
+2026-01-04 02:28:51.387 | INFO     | models.bert.dataset:prepare_datasets_from_csv:98 - ✓ Columns: ['category', 'rating', 'label', 'text_']
+2026-01-04 02:28:51.398 | INFO     | models.bert.dataset:prepare_datasets_from_csv:108 - ✓ Unique labels: ['CG' 'OR']
+2026-01-04 02:28:51.403 | INFO     | models.bert.dataset:prepare_datasets_from_csv:115 - ✓ Label mapping: {'CG': 0, 'OR': 1}
+2026-01-04 02:28:51.429 | INFO     | models.bert.dataset:prepare_datasets_from_csv:131 - ✓ Train size: 32345
+2026-01-04 02:28:51.430 | INFO     | models.bert.dataset:prepare_datasets_from_csv:132 - ✓ Test size: 8087
+2026-01-04 02:30:13.590 | ERROR    | __main__:<module>:111 - ❌ Error: We couldn't connect to 'https://huggingface.co' to load this file, couldn't find it in the cached files and it looks like distilbert-base-multilingual-cased is not the path to a directory containing a file named config.json.
+Checkout your internet connection or see how to run the library in offline mode at 'https://huggingface.co/docs/transformers/installation#offline-mode'.
+Traceback (most recent call last):
+
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\urllib3\connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+           │          └ <function create_connection at 0x000001ABB4E70A40>
+           └ <module 'urllib3.util.connection' from 'C:\\Users\\Ce-PC\\Desktop\\PriceCheckTN\\pricecheck-ml\\venv311\\Lib\\site-packages\\...
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               │      │           │     │     │       │      └ <SocketKind.SOCK_STREAM: 1>
+               │      │           │     │     │       └ <module 'socket' from 'C:\\Program Files\\Python311\\Lib\\socket.py'>
+               │      │           │     │     └ <AddressFamily.AF_UNSPEC: 0>
+               │      │           │     └ 443
+               │      │           └ 'huggingface.co'
+               │      └ <function getaddrinfo at 0x000001AB9E795940>
+               └ <module 'socket' from 'C:\\Program Files\\Python311\\Lib\\socket.py'>
+  File "C:\Program Files\Python311\Lib\socket.py", line 962, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               │       │           │     │     │       │     │      └ 0
+               │       │           │     │     │       │     └ 0
+               │       │           │     │     │       └ <SocketKind.SOCK_STREAM: 1>
+               │       │           │     │     └ <AddressFamily.AF_UNSPEC: 0>
+               │       │           │     └ 443
+               │       │           └ 'huggingface.co'
+               │       └ <built-in function getaddrinfo>
+               └ <module '_socket' from 'C:\\Program Files\\Python311\\DLLs\\_socket.pyd'>
+
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               │    └ <function HTTPConnectionPool._make_request at 0x000001ABB513DD00>
+               └ <urllib3.connectionpool.HTTPSConnectionPool object at 0x000001ABC9411810>
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+          └ NameResolutionError("HTTPSConnection(host='huggingface.co', port=443): Failed to resolve 'huggingface.co' ([Errno 11001] geta...
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+    │    │              └ <HTTPSConnection(host='huggingface.co', port=443) at 0x1abc9413610>
+    │    └ <function HTTPSConnectionPool._validate_conn at 0x000001ABB513E2A0>
+    └ <urllib3.connectionpool.HTTPSConnectionPool object at 0x000001ABC9411810>
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+    │    └ <function HTTPSConnection.connect at 0x000001ABB5131D00>
+    └ <HTTPSConnection(host='huggingface.co', port=443) at 0x1abc9413610>
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\urllib3\connection.py", line 759, in connect
+    self.sock = sock = self._new_conn()
+    │    │             │    └ <function HTTPConnection._new_conn at 0x000001ABB5131300>
+    │    │             └ <HTTPSConnection(host='huggingface.co', port=443) at 0x1abc9413610>
+    │    └ None
+    └ <HTTPSConnection(host='huggingface.co', port=443) at 0x1abc9413610>
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\urllib3\connection.py", line 211, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+          │                   │    │     └ <HTTPSConnection(host='huggingface.co', port=443) at 0x1abc9413610>
+          │                   │    └ <property object at 0x000001ABB50CE340>
+          │                   └ <HTTPSConnection(host='huggingface.co', port=443) at 0x1abc9413610>
+          └ <class 'urllib3.exceptions.NameResolutionError'>
+
+urllib3.exceptions.NameResolutionError: HTTPSConnection(host='huggingface.co', port=443): Failed to resolve 'huggingface.co' ([Errno 11001] getaddrinfo failed)
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\requests\adapters.py", line 486, in send
+    resp = conn.urlopen(
+           │    └ <function HTTPConnectionPool.urlopen at 0x000001ABB513DEE0>
+           └ <urllib3.connectionpool.HTTPSConnectionPool object at 0x000001ABC9411810>
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              │       └ <function Retry.increment at 0x000001ABB4E731A0>
+              └ Retry(total=0, connect=None, read=False, redirect=None, status=None)
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+          │             │      │    │            └ NameResolutionError("HTTPSConnection(host='huggingface.co', port=443): Failed to resolve 'huggingface.co' ([Errno 11001] geta...
+          │             │      │    └ NameResolutionError("HTTPSConnection(host='huggingface.co', port=443): Failed to resolve 'huggingface.co' ([Errno 11001] geta...
+          │             │      └ '/distilbert-base-multilingual-cased/resolve/main/config.json'
+          │             └ <urllib3.connectionpool.HTTPSConnectionPool object at 0x000001ABC9411810>
+          └ <class 'urllib3.exceptions.MaxRetryError'>
+
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /distilbert-base-multilingual-cased/resolve/main/config.json (Caused by NameResolutionError("HTTPSConnection(host='huggingface.co', port=443): Failed to resolve 'huggingface.co' ([Errno 11001] getaddrinfo failed)"))
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\huggingface_hub\file_download.py", line 1543, in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+               └ <function get_hf_file_metadata at 0x000001ABB5449620>
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\huggingface_hub\utils\_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           │   │       └ {'url': 'https://huggingface.co/distilbert-base-multilingual-cased/resolve/main/config.json', 'proxies': None, 'timeout': 10,...
+           │   └ ()
+           └ <function get_hf_file_metadata at 0x000001ABB54494E0>
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\huggingface_hub\file_download.py", line 1460, in get_hf_file_metadata
+    r = _request_wrapper(
+        └ <function _request_wrapper at 0x000001ABB5448900>
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\huggingface_hub\file_download.py", line 283, in _request_wrapper
+    response = _request_wrapper(
+               └ <function _request_wrapper at 0x000001ABB5448900>
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\huggingface_hub\file_download.py", line 306, in _request_wrapper
+    response = http_backoff(method=method, url=url, **params)
+               │                   │           │      └ {'headers': {'user-agent': 'unknown/None; hf_hub/0.36.0; python/3.11.9; torch/2.2.0; transformers/4.36.0; session_id/4934e7b1...
+               │                   │           └ 'https://huggingface.co/distilbert-base-multilingual-cased/resolve/main/config.json'
+               │                   └ 'HEAD'
+               └ <function http_backoff at 0x000001ABB5430EA0>
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\huggingface_hub\utils\_http.py", line 325, in http_backoff
+    raise err
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\huggingface_hub\utils\_http.py", line 306, in http_backoff
+    response = session.request(method=method, url=url, **kwargs)
+               │       │              │           │      └ {'headers': {'user-agent': 'unknown/None; hf_hub/0.36.0; python/3.11.9; torch/2.2.0; transformers/4.36.0; session_id/4934e7b1...
+               │       │              │           └ 'https://huggingface.co/distilbert-base-multilingual-cased/resolve/main/config.json'
+               │       │              └ 'HEAD'
+               │       └ <function Session.request at 0x000001ABB52CE2A0>
+               └ <requests.sessions.Session object at 0x000001ABC940BC50>
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           │    │    │       └ {'timeout': 10, 'allow_redirects': False, 'proxies': OrderedDict(), 'stream': False, 'verify': True, 'cert': None}
+           │    │    └ <PreparedRequest [HEAD]>
+           │    └ <function Session.send at 0x000001ABB52CE7A0>
+           └ <requests.sessions.Session object at 0x000001ABC940BC50>
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        │       │    │          └ {'timeout': 10, 'proxies': OrderedDict(), 'stream': False, 'verify': True, 'cert': None}
+        │       │    └ <PreparedRequest [HEAD]>
+        │       └ <function UniqueRequestIdAdapter.send at 0x000001ABB5430400>
+        └ <huggingface_hub.utils._http.UniqueRequestIdAdapter object at 0x000001ABC9410690>
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\huggingface_hub\utils\_http.py", line 95, in send
+    return super().send(request, *args, **kwargs)
+                        │         │       └ {'timeout': 10, 'proxies': OrderedDict(), 'stream': False, 'verify': True, 'cert': None}
+                        │         └ ()
+                        └ <PreparedRequest [HEAD]>
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+          │                          └ <PreparedRequest [HEAD]>
+          └ <class 'requests.exceptions.ConnectionError'>
+
+requests.exceptions.ConnectionError: (MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /distilbert-base-multilingual-cased/resolve/main/config.json (Caused by NameResolutionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to resolve \'huggingface.co\' ([Errno 11001] getaddrinfo failed)"))'), '(Request ID: 2ad2c496-ec67-480a-b9be-e4ce67fe5aa0)')
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\transformers\utils\hub.py", line 389, in cached_file
+    resolved_file = hf_hub_download(
+                    └ <function hf_hub_download at 0x000001ABB54491C0>
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\huggingface_hub\utils\_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           │   │       └ {'subfolder': None, 'repo_type': None, 'revision': None, 'cache_dir': 'C:\\Users\\Ce-PC\\.cache\\huggingface\\hub', 'user_age...
+           │   └ ('distilbert-base-multilingual-cased', 'config.json')
+           └ <function hf_hub_download at 0x000001ABB5449080>
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\huggingface_hub\file_download.py", line 1007, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+           └ <function _hf_hub_download_to_cache_dir at 0x000001ABB5449120>
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\huggingface_hub\file_download.py", line 1114, in _hf_hub_download_to_cache_dir
+    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+    │                         │                │               └ False
+    │                         │                └ False
+    │                         └ ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /distil...
+    └ <function _raise_on_head_call_error at 0x000001ABB54496C0>
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\huggingface_hub\file_download.py", line 1658, in _raise_on_head_call_error
+    raise LocalEntryNotFoundError(
+          └ <class 'huggingface_hub.errors.LocalEntryNotFoundError'>
+
+huggingface_hub.errors.LocalEntryNotFoundError: An error happened while trying to locate the file on the Hub and we cannot find the requested files in the local cache. Please check your connection and try again or make sure your Internet connection is on.
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+> File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\scripts\train_bert.py", line 107, in <module>
+    main()
+    └ <function main at 0x000001AB9C6704A0>
+
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\scripts\train_bert.py", line 51, in main
+    train_dataset, test_dataset, label_mapping = prepare_datasets_from_csv(
+                                                 └ <function prepare_datasets_from_csv at 0x000001AB9C85DD00>
+
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\models\bert\dataset.py", line 135, in prepare_datasets_from_csv
+    train_dataset = FakeReviewDataset(
+                    └ <class 'models.bert.dataset.FakeReviewDataset'>
+
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\models\bert\dataset.py", line 35, in __init__
+    self.tokenizer = AutoTokenizer.from_pretrained(tokenizer_name)
+    │                │             │               └ 'distilbert-base-multilingual-cased'
+    │                │             └ <classmethod(<function AutoTokenizer.from_pretrained at 0x000001ABB58656C0>)>
+    │                └ <class 'transformers.models.auto.tokenization_auto.AutoTokenizer'>
+    └ <models.bert.dataset.FakeReviewDataset object at 0x000001ABC831C590>
+
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\transformers\models\auto\tokenization_auto.py", line 752, in from_pretrained
+    config = AutoConfig.from_pretrained(
+             │          └ <classmethod(<function AutoConfig.from_pretrained at 0x000001ABB5864860>)>
+             └ <class 'transformers.models.auto.configuration_auto.AutoConfig'>
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\transformers\models\auto\configuration_auto.py", line 1082, in from_pretrained
+    config_dict, unused_kwargs = PretrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)
+                                 │                │               │                                └ {'_from_auto': True, 'name_or_path': 'distilbert-base-multilingual-cased'}
+                                 │                │               └ 'distilbert-base-multilingual-cased'
+                                 │                └ <classmethod(<function PretrainedConfig.get_config_dict at 0x000001ABB581AE80>)>
+                                 └ <class 'transformers.configuration_utils.PretrainedConfig'>
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\transformers\configuration_utils.py", line 644, in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+                          │   │                │                                └ {'_from_auto': True, 'name_or_path': 'distilbert-base-multilingual-cased'}
+                          │   │                └ 'distilbert-base-multilingual-cased'
+                          │   └ <classmethod(<function PretrainedConfig._get_config_dict at 0x000001ABB581AF20>)>
+                          └ <class 'transformers.configuration_utils.PretrainedConfig'>
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\transformers\configuration_utils.py", line 699, in _get_config_dict
+    resolved_config_file = cached_file(
+                           └ <function cached_file at 0x000001ABB55913A0>
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\transformers\utils\hub.py", line 429, in cached_file
+    raise EnvironmentError(
+
+OSError: We couldn't connect to 'https://huggingface.co' to load this file, couldn't find it in the cached files and it looks like distilbert-base-multilingual-cased is not the path to a directory containing a file named config.json.
+Checkout your internet connection or see how to run the library in offline mode at 'https://huggingface.co/docs/transformers/installation#offline-mode'.
+2026-01-04 02:32:55.738 | INFO     | __main__:main:49 - 
+📦 Preparing datasets...
+2026-01-04 02:32:55.757 | INFO     | models.bert.dataset:prepare_datasets_from_csv:92 - 📥 Loading data from data/raw/reviews/fake_reviews.csv
+2026-01-04 02:32:55.907 | INFO     | models.bert.dataset:prepare_datasets_from_csv:97 - ✓ Loaded 40432 reviews
+2026-01-04 02:32:55.908 | INFO     | models.bert.dataset:prepare_datasets_from_csv:98 - ✓ Columns: ['category', 'rating', 'label', 'text_']
+2026-01-04 02:32:55.913 | INFO     | models.bert.dataset:prepare_datasets_from_csv:108 - ✓ Unique labels: ['CG' 'OR']
+2026-01-04 02:32:55.915 | INFO     | models.bert.dataset:prepare_datasets_from_csv:115 - ✓ Label mapping: {'CG': 0, 'OR': 1}
+2026-01-04 02:32:55.938 | INFO     | models.bert.dataset:prepare_datasets_from_csv:131 - ✓ Train size: 32345
+2026-01-04 02:32:55.939 | INFO     | models.bert.dataset:prepare_datasets_from_csv:132 - ✓ Test size: 8087
+2026-01-04 02:33:01.389 | INFO     | models.bert.dataset:__init__:38 - ✓ Initialized dataset: 32345 samples
+2026-01-04 02:33:01.390 | INFO     | models.bert.dataset:__init__:39 - ✓ Using tokenizer: distilbert-base-multilingual-cased
+2026-01-04 02:33:01.651 | INFO     | models.bert.dataset:__init__:38 - ✓ Initialized dataset: 8087 samples
+2026-01-04 02:33:01.652 | INFO     | models.bert.dataset:__init__:39 - ✓ Using tokenizer: distilbert-base-multilingual-cased
+2026-01-04 02:33:01.654 | INFO     | __main__:main:60 - ✓ Label mapping: {'CG': 0, 'OR': 1}
+2026-01-04 02:33:01.655 | INFO     | __main__:main:63 - 
+🤖 Initializing BERT trainer...
+2026-01-04 02:33:01.656 | INFO     | models.bert.trainer:__init__:47 - 🤖 Loading model: distilbert-base-multilingual-cased
+2026-01-04 02:36:41.919 | INFO     | models.bert.trainer:__init__:58 - 💻 Using device: cpu
+2026-01-04 02:36:41.931 | INFO     | __main__:main:72 - 
+🚀 Starting training...
+
+2026-01-04 02:36:41.932 | INFO     | models.bert.trainer:train:114 - 🚀 Starting BERT fine-tuning...
+2026-01-04 02:36:41.932 | INFO     | models.bert.trainer:train:115 -    Epochs: 3
+2026-01-04 02:36:41.933 | INFO     | models.bert.trainer:train:116 -    Batch size: 16
+2026-01-04 02:36:41.933 | INFO     | models.bert.trainer:train:117 -    Learning rate: 2e-05
+2026-01-04 02:36:41.934 | ERROR    | __main__:<module>:111 - ❌ Error: Using the `Trainer` with `PyTorch` requires `accelerate>=0.20.1`: Please run `pip install transformers[torch]` or `pip install accelerate -U`
+Traceback (most recent call last):
+
+> File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\scripts\train_bert.py", line 107, in <module>
+    main()
+    └ <function main at 0x000002BD94C804A0>
+
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\scripts\train_bert.py", line 74, in main
+    train_result = trainer.train(
+                   │       └ <function BERTFakeReviewTrainer.train at 0x000002BDC1375800>
+                   └ <models.bert.trainer.BERTFakeReviewTrainer object at 0x000002BDC111BF50>
+
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\models\bert\trainer.py", line 120, in train
+    training_args = TrainingArguments(
+                    └ <class 'transformers.training_args.TrainingArguments'>
+
+  File "<string>", line 121, in __init__
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\transformers\training_args.py", line 1493, in __post_init__
+    and (self.device.type != "cuda")
+         │    └ <property object at 0x000002BDB0C02CF0>
+         └ TrainingArguments(
+           _n_gpu=-1,
+           adafactor=False,
+           adam_beta1=0.9,
+           adam_beta2=0.999,
+           adam_epsilon=1e-08,
+           auto_find_batch_size=Fal...
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\transformers\training_args.py", line 1941, in device
+    return self._setup_devices
+           │    └ <transformers.utils.generic.cached_property object at 0x000002BDB0BD7700>
+           └ TrainingArguments(
+             _n_gpu=-1,
+             adafactor=False,
+             adam_beta1=0.9,
+             adam_beta2=0.999,
+             adam_epsilon=1e-08,
+             auto_find_batch_size=Fal...
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\transformers\utils\generic.py", line 54, in __get__
+    cached = self.fget(obj)
+             │    │    └ TrainingArguments(
+             │    │      _n_gpu=-1,
+             │    │      adafactor=False,
+             │    │      adam_beta1=0.9,
+             │    │      adam_beta2=0.999,
+             │    │      adam_epsilon=1e-08,
+             │    │      auto_find_batch_size=Fal...
+             │    └ <member 'fget' of 'property' objects>
+             └ <transformers.utils.generic.cached_property object at 0x000002BDB0BD7700>
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\transformers\training_args.py", line 1841, in _setup_devices
+    raise ImportError(
+
+ImportError: Using the `Trainer` with `PyTorch` requires `accelerate>=0.20.1`: Please run `pip install transformers[torch]` or `pip install accelerate -U`
+2026-01-04 02:44:42.035 | INFO     | __main__:main:49 - 
+📦 Preparing datasets...
+2026-01-04 02:44:42.052 | INFO     | models.bert.dataset:prepare_datasets_from_csv:92 - 📥 Loading data from data/raw/reviews/fake_reviews.csv
+2026-01-04 02:44:42.203 | INFO     | models.bert.dataset:prepare_datasets_from_csv:97 - ✓ Loaded 40432 reviews
+2026-01-04 02:44:42.204 | INFO     | models.bert.dataset:prepare_datasets_from_csv:98 - ✓ Columns: ['category', 'rating', 'label', 'text_']
+2026-01-04 02:44:42.213 | INFO     | models.bert.dataset:prepare_datasets_from_csv:108 - ✓ Unique labels: ['CG' 'OR']
+2026-01-04 02:44:42.217 | INFO     | models.bert.dataset:prepare_datasets_from_csv:115 - ✓ Label mapping: {'CG': 0, 'OR': 1}
+2026-01-04 02:44:42.241 | INFO     | models.bert.dataset:prepare_datasets_from_csv:131 - ✓ Train size: 32345
+2026-01-04 02:44:42.242 | INFO     | models.bert.dataset:prepare_datasets_from_csv:132 - ✓ Test size: 8087
+2026-01-04 02:44:44.197 | INFO     | models.bert.dataset:__init__:38 - ✓ Initialized dataset: 32345 samples
+2026-01-04 02:44:44.198 | INFO     | models.bert.dataset:__init__:39 - ✓ Using tokenizer: distilbert-base-multilingual-cased
+2026-01-04 02:44:44.608 | INFO     | models.bert.dataset:__init__:38 - ✓ Initialized dataset: 8087 samples
+2026-01-04 02:44:44.609 | INFO     | models.bert.dataset:__init__:39 - ✓ Using tokenizer: distilbert-base-multilingual-cased
+2026-01-04 02:44:44.611 | INFO     | __main__:main:60 - ✓ Label mapping: {'CG': 0, 'OR': 1}
+2026-01-04 02:44:44.612 | INFO     | __main__:main:63 - 
+🤖 Initializing BERT trainer...
+2026-01-04 02:44:44.612 | INFO     | models.bert.trainer:__init__:47 - 🤖 Loading model: distilbert-base-multilingual-cased
+2026-01-04 02:44:47.339 | INFO     | models.bert.trainer:__init__:58 - 💻 Using device: cpu
+2026-01-04 02:44:47.364 | INFO     | __main__:main:72 - 
+🚀 Starting training...
+
+2026-01-04 02:44:47.367 | INFO     | models.bert.trainer:train:114 - 🚀 Starting BERT fine-tuning...
+2026-01-04 02:44:47.369 | INFO     | models.bert.trainer:train:115 -    Epochs: 3
+2026-01-04 02:44:47.370 | INFO     | models.bert.trainer:train:116 -    Batch size: 16
+2026-01-04 02:44:47.370 | INFO     | models.bert.trainer:train:117 -    Learning rate: 2e-05
+2026-01-04 02:44:47.570 | ERROR    | __main__:<module>:111 - ❌ Error: Accelerator.__init__() got an unexpected keyword argument 'dispatch_batches'
+Traceback (most recent call last):
+
+> File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\scripts\train_bert.py", line 107, in <module>
+    main()
+    └ <function main at 0x000002499ACA04A0>
+
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\scripts\train_bert.py", line 74, in main
+    train_result = trainer.train(
+                   │       └ <function BERTFakeReviewTrainer.train at 0x00000249C74E8D60>
+                   └ <models.bert.trainer.BERTFakeReviewTrainer object at 0x00000249C570D7D0>
+
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\models\bert\trainer.py", line 140, in train
+    self.trainer = Trainer(
+    │    │         └ <class 'transformers.trainer.Trainer'>
+    │    └ None
+    └ <models.bert.trainer.BERTFakeReviewTrainer object at 0x00000249C570D7D0>
+
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\transformers\trainer.py", line 343, in __init__
+    self.create_accelerator_and_postprocess()
+    │    └ <function Trainer.create_accelerator_and_postprocess at 0x00000249C74E8C20>
+    └ <transformers.trainer.Trainer object at 0x00000249C87F78D0>
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\transformers\trainer.py", line 3882, in create_accelerator_and_postprocess
+    self.accelerator = Accelerator(
+    │                  └ <class 'accelerate.accelerator.Accelerator'>
+    └ <transformers.trainer.Trainer object at 0x00000249C87F78D0>
+
+TypeError: Accelerator.__init__() got an unexpected keyword argument 'dispatch_batches'
+2026-01-04 02:46:06.828 | INFO     | __main__:main:49 - 
+📦 Preparing datasets...
+2026-01-04 02:46:06.849 | INFO     | models.bert.dataset:prepare_datasets_from_csv:92 - 📥 Loading data from data/raw/reviews/fake_reviews.csv
+2026-01-04 02:46:07.048 | INFO     | models.bert.dataset:prepare_datasets_from_csv:97 - ✓ Loaded 40432 reviews
+2026-01-04 02:46:07.049 | INFO     | models.bert.dataset:prepare_datasets_from_csv:98 - ✓ Columns: ['category', 'rating', 'label', 'text_']
+2026-01-04 02:46:07.061 | INFO     | models.bert.dataset:prepare_datasets_from_csv:108 - ✓ Unique labels: ['CG' 'OR']
+2026-01-04 02:46:07.066 | INFO     | models.bert.dataset:prepare_datasets_from_csv:115 - ✓ Label mapping: {'CG': 0, 'OR': 1}
+2026-01-04 02:46:07.104 | INFO     | models.bert.dataset:prepare_datasets_from_csv:131 - ✓ Train size: 32345
+2026-01-04 02:46:07.104 | INFO     | models.bert.dataset:prepare_datasets_from_csv:132 - ✓ Test size: 8087
+2026-01-04 02:46:08.319 | INFO     | models.bert.dataset:__init__:38 - ✓ Initialized dataset: 32345 samples
+2026-01-04 02:46:08.320 | INFO     | models.bert.dataset:__init__:39 - ✓ Using tokenizer: distilbert-base-multilingual-cased
+2026-01-04 02:46:08.608 | INFO     | models.bert.dataset:__init__:38 - ✓ Initialized dataset: 8087 samples
+2026-01-04 02:46:08.609 | INFO     | models.bert.dataset:__init__:39 - ✓ Using tokenizer: distilbert-base-multilingual-cased
+2026-01-04 02:46:08.612 | INFO     | __main__:main:60 - ✓ Label mapping: {'CG': 0, 'OR': 1}
+2026-01-04 02:46:08.612 | INFO     | __main__:main:63 - 
+🤖 Initializing BERT trainer...
+2026-01-04 02:46:08.613 | INFO     | models.bert.trainer:__init__:47 - 🤖 Loading model: distilbert-base-multilingual-cased
+2026-01-04 02:46:10.967 | INFO     | models.bert.trainer:__init__:58 - 💻 Using device: cpu
+2026-01-04 02:46:10.991 | INFO     | __main__:main:72 - 
+🚀 Starting training...
+
+2026-01-04 02:46:10.994 | INFO     | models.bert.trainer:train:114 - 🚀 Starting BERT fine-tuning...
+2026-01-04 02:46:10.995 | INFO     | models.bert.trainer:train:115 -    Epochs: 3
+2026-01-04 02:46:10.995 | INFO     | models.bert.trainer:train:116 -    Batch size: 16
+2026-01-04 02:46:10.996 | INFO     | models.bert.trainer:train:117 -    Learning rate: 2e-05
+2026-01-04 02:46:11.049 | ERROR    | __main__:<module>:111 - ❌ Error: Accelerator.__init__() got an unexpected keyword argument 'dispatch_batches'
+Traceback (most recent call last):
+
+> File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\scripts\train_bert.py", line 107, in <module>
+    main()
+    └ <function main at 0x0000025F0DC004A0>
+
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\scripts\train_bert.py", line 74, in main
+    train_result = trainer.train(
+                   │       └ <function BERTFakeReviewTrainer.train at 0x0000025F3A4B4D60>
+                   └ <models.bert.trainer.BERTFakeReviewTrainer object at 0x0000025F3A17F3D0>
+
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\models\bert\trainer.py", line 140, in train
+    self.trainer = Trainer(
+    │    │         └ <class 'transformers.trainer.Trainer'>
+    │    └ None
+    └ <models.bert.trainer.BERTFakeReviewTrainer object at 0x0000025F3A17F3D0>
+
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\transformers\trainer.py", line 343, in __init__
+    self.create_accelerator_and_postprocess()
+    │    └ <function Trainer.create_accelerator_and_postprocess at 0x0000025F3A4B4C20>
+    └ <transformers.trainer.Trainer object at 0x0000025F3B1D9F90>
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\transformers\trainer.py", line 3870, in create_accelerator_and_postprocess
+    self.accelerator = Accelerator(
+    │                  └ <class 'accelerate.accelerator.Accelerator'>
+    └ <transformers.trainer.Trainer object at 0x0000025F3B1D9F90>
+
+TypeError: Accelerator.__init__() got an unexpected keyword argument 'dispatch_batches'
+2026-01-04 02:46:31.620 | INFO     | __main__:main:49 - 
+📦 Preparing datasets...
+2026-01-04 02:46:31.636 | INFO     | models.bert.dataset:prepare_datasets_from_csv:92 - 📥 Loading data from data/raw/reviews/fake_reviews.csv
+2026-01-04 02:46:31.781 | INFO     | models.bert.dataset:prepare_datasets_from_csv:97 - ✓ Loaded 40432 reviews
+2026-01-04 02:46:31.782 | INFO     | models.bert.dataset:prepare_datasets_from_csv:98 - ✓ Columns: ['category', 'rating', 'label', 'text_']
+2026-01-04 02:46:31.794 | INFO     | models.bert.dataset:prepare_datasets_from_csv:108 - ✓ Unique labels: ['CG' 'OR']
+2026-01-04 02:46:31.801 | INFO     | models.bert.dataset:prepare_datasets_from_csv:115 - ✓ Label mapping: {'CG': 0, 'OR': 1}
+2026-01-04 02:46:31.826 | INFO     | models.bert.dataset:prepare_datasets_from_csv:131 - ✓ Train size: 32345
+2026-01-04 02:46:31.826 | INFO     | models.bert.dataset:prepare_datasets_from_csv:132 - ✓ Test size: 8087
+2026-01-04 02:46:32.680 | INFO     | models.bert.dataset:__init__:38 - ✓ Initialized dataset: 32345 samples
+2026-01-04 02:46:32.681 | INFO     | models.bert.dataset:__init__:39 - ✓ Using tokenizer: distilbert-base-multilingual-cased
+2026-01-04 02:46:32.932 | INFO     | models.bert.dataset:__init__:38 - ✓ Initialized dataset: 8087 samples
+2026-01-04 02:46:32.933 | INFO     | models.bert.dataset:__init__:39 - ✓ Using tokenizer: distilbert-base-multilingual-cased
+2026-01-04 02:46:32.935 | INFO     | __main__:main:60 - ✓ Label mapping: {'CG': 0, 'OR': 1}
+2026-01-04 02:46:32.935 | INFO     | __main__:main:63 - 
+🤖 Initializing BERT trainer...
+2026-01-04 02:46:32.936 | INFO     | models.bert.trainer:__init__:47 - 🤖 Loading model: distilbert-base-multilingual-cased
+2026-01-04 02:46:35.222 | INFO     | models.bert.trainer:__init__:58 - 💻 Using device: cpu
+2026-01-04 02:46:35.238 | INFO     | __main__:main:72 - 
+🚀 Starting training...
+
+2026-01-04 02:46:35.239 | INFO     | models.bert.trainer:train:114 - 🚀 Starting BERT fine-tuning...
+2026-01-04 02:46:35.239 | INFO     | models.bert.trainer:train:115 -    Epochs: 3
+2026-01-04 02:46:35.240 | INFO     | models.bert.trainer:train:116 -    Batch size: 16
+2026-01-04 02:46:35.240 | INFO     | models.bert.trainer:train:117 -    Learning rate: 2e-05
+2026-01-04 02:46:35.262 | ERROR    | __main__:<module>:111 - ❌ Error: Accelerator.__init__() got an unexpected keyword argument 'dispatch_batches'
+Traceback (most recent call last):
+
+> File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\scripts\train_bert.py", line 107, in <module>
+    main()
+    └ <function main at 0x00000173CA5104A0>
+
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\scripts\train_bert.py", line 74, in main
+    train_result = trainer.train(
+                   │       └ <function BERTFakeReviewTrainer.train at 0x00000173F6D88D60>
+                   └ <models.bert.trainer.BERTFakeReviewTrainer object at 0x00000173F628B090>
+
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\models\bert\trainer.py", line 140, in train
+    self.trainer = Trainer(
+    │    │         └ <class 'transformers.trainer.Trainer'>
+    │    └ None
+    └ <models.bert.trainer.BERTFakeReviewTrainer object at 0x00000173F628B090>
+
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\transformers\trainer.py", line 343, in __init__
+    self.create_accelerator_and_postprocess()
+    │    └ <function Trainer.create_accelerator_and_postprocess at 0x00000173F6D88C20>
+    └ <transformers.trainer.Trainer object at 0x00000173F7AB1390>
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\transformers\trainer.py", line 3870, in create_accelerator_and_postprocess
+    self.accelerator = Accelerator(
+    │                  └ <class 'accelerate.accelerator.Accelerator'>
+    └ <transformers.trainer.Trainer object at 0x00000173F7AB1390>
+
+TypeError: Accelerator.__init__() got an unexpected keyword argument 'dispatch_batches'
+2026-01-04 02:47:05.519 | INFO     | __main__:main:49 - 
+📦 Preparing datasets...
+2026-01-04 02:47:05.539 | INFO     | models.bert.dataset:prepare_datasets_from_csv:92 - 📥 Loading data from data/raw/reviews/fake_reviews.csv
+2026-01-04 02:47:05.731 | INFO     | models.bert.dataset:prepare_datasets_from_csv:97 - ✓ Loaded 40432 reviews
+2026-01-04 02:47:05.733 | INFO     | models.bert.dataset:prepare_datasets_from_csv:98 - ✓ Columns: ['category', 'rating', 'label', 'text_']
+2026-01-04 02:47:05.748 | INFO     | models.bert.dataset:prepare_datasets_from_csv:108 - ✓ Unique labels: ['CG' 'OR']
+2026-01-04 02:47:05.754 | INFO     | models.bert.dataset:prepare_datasets_from_csv:115 - ✓ Label mapping: {'CG': 0, 'OR': 1}
+2026-01-04 02:47:05.783 | INFO     | models.bert.dataset:prepare_datasets_from_csv:131 - ✓ Train size: 32345
+2026-01-04 02:47:05.784 | INFO     | models.bert.dataset:prepare_datasets_from_csv:132 - ✓ Test size: 8087
+2026-01-04 02:47:06.656 | INFO     | models.bert.dataset:__init__:38 - ✓ Initialized dataset: 32345 samples
+2026-01-04 02:47:06.657 | INFO     | models.bert.dataset:__init__:39 - ✓ Using tokenizer: distilbert-base-multilingual-cased
+2026-01-04 02:47:06.929 | INFO     | models.bert.dataset:__init__:38 - ✓ Initialized dataset: 8087 samples
+2026-01-04 02:47:06.930 | INFO     | models.bert.dataset:__init__:39 - ✓ Using tokenizer: distilbert-base-multilingual-cased
+2026-01-04 02:47:06.932 | INFO     | __main__:main:60 - ✓ Label mapping: {'CG': 0, 'OR': 1}
+2026-01-04 02:47:06.932 | INFO     | __main__:main:63 - 
+🤖 Initializing BERT trainer...
+2026-01-04 02:47:06.933 | INFO     | models.bert.trainer:__init__:47 - 🤖 Loading model: distilbert-base-multilingual-cased
+2026-01-04 02:47:08.958 | INFO     | models.bert.trainer:__init__:58 - 💻 Using device: cpu
+2026-01-04 02:47:08.964 | INFO     | __main__:main:72 - 
+🚀 Starting training...
+
+2026-01-04 02:47:08.964 | INFO     | models.bert.trainer:train:114 - 🚀 Starting BERT fine-tuning...
+2026-01-04 02:47:08.965 | INFO     | models.bert.trainer:train:115 -    Epochs: 3
+2026-01-04 02:47:08.966 | INFO     | models.bert.trainer:train:116 -    Batch size: 16
+2026-01-04 02:47:08.966 | INFO     | models.bert.trainer:train:117 -    Learning rate: 2e-05
+2026-01-04 02:47:08.982 | ERROR    | __main__:<module>:111 - ❌ Error: Accelerator.__init__() got an unexpected keyword argument 'dispatch_batches'
+Traceback (most recent call last):
+
+> File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\scripts\train_bert.py", line 107, in <module>
+    main()
+    └ <function main at 0x00000150B27F04A0>
+
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\scripts\train_bert.py", line 74, in main
+    train_result = trainer.train(
+                   │       └ <function BERTFakeReviewTrainer.train at 0x00000150DF018D60>
+                   └ <models.bert.trainer.BERTFakeReviewTrainer object at 0x00000150DF0150D0>
+
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\models\bert\trainer.py", line 140, in train
+    self.trainer = Trainer(
+    │    │         └ <class 'transformers.trainer.Trainer'>
+    │    └ None
+    └ <models.bert.trainer.BERTFakeReviewTrainer object at 0x00000150DF0150D0>
+
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\transformers\trainer.py", line 343, in __init__
+    self.create_accelerator_and_postprocess()
+    │    └ <function Trainer.create_accelerator_and_postprocess at 0x00000150DF018C20>
+    └ <transformers.trainer.Trainer object at 0x00000150DFD41950>
+  File "C:\Users\Ce-PC\Desktop\PriceCheckTN\pricecheck-ml\venv311\Lib\site-packages\transformers\trainer.py", line 3870, in create_accelerator_and_postprocess
+    self.accelerator = Accelerator(
+    │                  └ <class 'accelerate.accelerator.Accelerator'>
+    └ <transformers.trainer.Trainer object at 0x00000150DFD41950>
+
+TypeError: Accelerator.__init__() got an unexpected keyword argument 'dispatch_batches'
+2026-01-04 02:50:35.493 | INFO     | __main__:main:49 - 
+📦 Preparing datasets...
+2026-01-04 02:50:35.517 | INFO     | models.bert.dataset:prepare_datasets_from_csv:92 - 📥 Loading data from data/raw/reviews/fake_reviews.csv
+2026-01-04 02:50:35.745 | INFO     | models.bert.dataset:prepare_datasets_from_csv:97 - ✓ Loaded 40432 reviews
+2026-01-04 02:50:35.746 | INFO     | models.bert.dataset:prepare_datasets_from_csv:98 - ✓ Columns: ['category', 'rating', 'label', 'text_']
+2026-01-04 02:50:35.758 | INFO     | models.bert.dataset:prepare_datasets_from_csv:108 - ✓ Unique labels: ['CG' 'OR']
+2026-01-04 02:50:35.763 | INFO     | models.bert.dataset:prepare_datasets_from_csv:115 - ✓ Label mapping: {'CG': 0, 'OR': 1}
+2026-01-04 02:50:35.805 | INFO     | models.bert.dataset:prepare_datasets_from_csv:131 - ✓ Train size: 32345
+2026-01-04 02:50:35.806 | INFO     | models.bert.dataset:prepare_datasets_from_csv:132 - ✓ Test size: 8087
+2026-01-04 02:50:36.788 | INFO     | models.bert.dataset:__init__:38 - ✓ Initialized dataset: 32345 samples
+2026-01-04 02:50:36.789 | INFO     | models.bert.dataset:__init__:39 - ✓ Using tokenizer: distilbert-base-multilingual-cased
+2026-01-04 02:50:37.121 | INFO     | models.bert.dataset:__init__:38 - ✓ Initialized dataset: 8087 samples
+2026-01-04 02:50:37.122 | INFO     | models.bert.dataset:__init__:39 - ✓ Using tokenizer: distilbert-base-multilingual-cased
+2026-01-04 02:50:37.124 | INFO     | __main__:main:60 - ✓ Label mapping: {'CG': 0, 'OR': 1}
+2026-01-04 02:50:37.125 | INFO     | __main__:main:63 - 
+🤖 Initializing BERT trainer...
+2026-01-04 02:50:37.126 | INFO     | models.bert.trainer:__init__:47 - 🤖 Loading model: distilbert-base-multilingual-cased
+2026-01-04 02:50:39.719 | INFO     | models.bert.trainer:__init__:58 - 💻 Using device: cpu
+2026-01-04 02:50:39.744 | INFO     | __main__:main:72 - 
+🚀 Starting training...
+
+2026-01-04 02:50:39.747 | INFO     | models.bert.trainer:train:114 - 🚀 Starting BERT fine-tuning...
+2026-01-04 02:50:39.747 | INFO     | models.bert.trainer:train:115 -    Epochs: 3
+2026-01-04 02:50:39.747 | INFO     | models.bert.trainer:train:116 -    Batch size: 16
+2026-01-04 02:50:39.747 | INFO     | models.bert.trainer:train:117 -    Learning rate: 2e-05
+2026-01-04 02:50:40.193 | INFO     | models.bert.trainer:train:150 - ⏳ Training started...
