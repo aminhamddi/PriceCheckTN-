@@ -4,7 +4,19 @@ FastAPI with BERT Model
 
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from api.models.bert_predictor import BERTFakeReviewPredictor, EnsemblePredictor
+import importlib.util
+import sys
+from pathlib import Path as _Path
+
+# Dynamic import of api/models/bert_predictor.py to avoid name collision
+# when an `api.models` module file exists alongside the `api/models/` package.
+_bp = _Path(__file__).parent / "models" / "bert_predictor.py"
+_spec = importlib.util.spec_from_file_location("api_models_bert_predictor", _bp)
+_bert_mod = importlib.util.module_from_spec(_spec)
+sys.modules["api_models_bert_predictor"] = _bert_mod
+_spec.loader.exec_module(_bert_mod)
+BERTFakeReviewPredictor = _bert_mod.BERTFakeReviewPredictor
+EnsemblePredictor = _bert_mod.EnsemblePredictor
 from loguru import logger
 import sys
 from pathlib import Path
@@ -28,14 +40,50 @@ predictor = None
 async def load_model():
     """Load model on startup"""
     global predictor
-
+    
     logger.info("🚀 Starting API...")
-
-    # Check if BERT model exists
+    
+    # Check if BERT model exists and contains model weights
     bert_model_path = Path("models/saved_models/bert_fake_review/final_model")
     sklearn_model_path = Path("models/saved_models/sklearn_baseline/model.pkl")
 
+    # Validate model directory
     if bert_model_path.exists():
+        # Look for common transformer weight files
+        weight_files = [
+            "pytorch_model.bin",
+            "tf_model.h5",
+            "model.safetensors",
+            "flax_model.msgpack",
+            "model.ckpt.index"
+        ]
+        has_weights = any((bert_model_path / wf).exists() for wf in weight_files)
+
+        if not has_weights:
+            logger.error("❌ BERT model directory found but no model weight files present")
+            logger.info("💡 Expected one of: %s", weight_files)
+            logger.info("💡 Place model weights in: models/saved_models/bert_fake_review/final_model")
+
+            # Optional: download from HuggingFace if HF_MODEL_ID env var is provided
+            import os
+            hf_id = os.getenv("HF_MODEL_ID")
+            if hf_id:
+                try:
+                    logger.info(f"⬇️ HF_MODEL_ID provided, attempting to download '{hf_id}' into {bert_model_path}")
+                    from transformers import AutoModelForSequenceClassification, AutoTokenizer
+                    bert_model_path.mkdir(parents=True, exist_ok=True)
+                    model = AutoModelForSequenceClassification.from_pretrained(hf_id)
+                    tokenizer = AutoTokenizer.from_pretrained(hf_id)
+                    model.save_pretrained(bert_model_path)
+                    tokenizer.save_pretrained(bert_model_path)
+                    logger.success(f"✅ Downloaded and saved HF model '{hf_id}' to {bert_model_path}")
+                    has_weights = True
+                except Exception as e:
+                    logger.error(f"❌ Failed to download HF model '{hf_id}': {e}")
+
+            if not has_weights:
+                raise FileNotFoundError("BERT model weights not found in models/saved_models/bert_fake_review/final_model")
+
         logger.info("📦 Loading BERT model...")
 
         if sklearn_model_path.exists():
@@ -59,7 +107,7 @@ async def load_model():
 class ReviewRequest(BaseModel):
     text: str
     method: str = "bert_only"  # 'bert_only', 'sklearn_only', or 'ensemble'
-
+    
     class Config:
         schema_extra = {
             "example": {
@@ -102,29 +150,29 @@ async def health():
 async def predict(request: ReviewRequest):
     """
     Predict if a review is fake or real
-
+    
     - **text**: Review text to analyze
     - **method**: Prediction method ('bert_only', 'sklearn_only', 'ensemble')
     """
     if predictor is None:
         raise HTTPException(status_code=503, detail="Model not loaded")
-
+    
     if not request.text or len(request.text.strip()) < 10:
         raise HTTPException(status_code=400, detail="Review text too short (min 10 chars)")
-
+    
     try:
         logger.info(f"🔍 Analyzing review (method: {request.method})")
-
+        
         # Check if ensemble or single model
         if isinstance(predictor, EnsemblePredictor):
             result = predictor.predict(request.text, method=request.method)
         else:
             result = predictor.predict_single(request.text)
-
+        
         logger.info(f"🎯 Prediction: {result['prediction']} (confidence: {result['confidence']:.2f}%)")
-
+        
         return result
-
+    
     except Exception as e:
         logger.error(f"❌ Prediction error: {e}")
         raise HTTPException(status_code=500, detail=str(e))
@@ -137,24 +185,24 @@ async def predict_batch(texts: list[str]):
     """
     if predictor is None:
         raise HTTPException(status_code=503, detail="Model not loaded")
-
+    
     if not texts:
         raise HTTPException(status_code=400, detail="No texts provided")
-
+    
     try:
         logger.info(f"🔍 Analyzing {len(texts)} reviews")
-
+        
         # Use BERT batch prediction
         if isinstance(predictor, EnsemblePredictor):
             results = predictor.bert_predictor.predict_batch(texts)
         else:
             results = predictor.predict_batch(texts)
-
+        
         return {
             "count": len(results),
             "predictions": results
         }
-
+    
     except Exception as e:
         logger.error(f"❌ Batch prediction error: {e}")
         raise HTTPException(status_code=500, detail=str(e))
@@ -165,7 +213,7 @@ async def model_info():
     """Get model information"""
     if predictor is None:
         return {"model_loaded": False}
-
+    
     return {
         "model_loaded": True,
         "model_type": type(predictor).__name__,

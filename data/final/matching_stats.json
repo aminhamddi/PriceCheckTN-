@@ -1,0 +1,12 @@
+{
+  "total_tn_products": 493,
+  "total_fr_products": 563,
+  "total_matches": 2,
+  "match_rate": 0.4056795131845842,
+  "high_confidence_matches": 0,
+  "medium_confidence_matches": 2,
+  "low_confidence_matches": 0,
+  "avg_price_diff_pct": -99.245,
+  "cheaper_in_tn": 2,
+  "cheaper_in_fr": 0
+}

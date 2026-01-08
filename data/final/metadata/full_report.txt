@@ -1,0 +1,51 @@
+======================================================================
+PRICECHECK TN - COMPREHENSIVE DATA REPORT
+Generated: 2026-01-05 11:41:26
+======================================================================
+
+📦 PRODUCTS OVERVIEW
+----------------------------------------------------------------------
+Total Products:              1,056
+
+By Country:
+  France             563 ( 53.3%)
+  Tunisia            493 ( 46.7%)
+
+Tunisia Prices (TND):
+  Average:               1,028.29 TND
+  Median:                499.00 TND
+  Range:                 1.50 - 3,059.00 TND
+
+France Prices (EUR):
+  Average:               104,663.69 EUR
+  Median:                77,995.00 EUR
+  Range:                 1,195.00 - 609,995.00 EUR
+
+💰 PRICE COMPARISON ANALYSIS
+----------------------------------------------------------------------
+Total Matches Found:         2
+
+Price Differences:
+  Average Difference:    -99.2%
+  Median Difference:     -99.2%
+  Range:                 -99.4% to -99.1%
+
+Cheaper Country:
+  Tunisia              2 (100.0%)
+
+💬 REVIEWS ANALYSIS
+----------------------------------------------------------------------
+Total Reviews:               5,000
+
+Fake Detection Results:
+  Fake Reviews:          0 (0.0%)
+  Real Reviews:          5,000 (100.0%)
+
+Confidence Levels:
+  Low              3,775 ( 75.5%)
+  Medium             756 ( 15.1%)
+  High               469 (  9.4%)
+
+======================================================================
+✅ END OF REPORT
+======================================================================

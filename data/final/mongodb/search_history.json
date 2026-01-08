@@ -1,0 +1,16 @@
+[
+  {
+    "_id": "search_000001",
+    "user_id": "user_000002",
+    "query": "laptop HP",
+    "results_count": 45,
+    "timestamp": "2026-01-05T21:40:35.542163"
+  },
+  {
+    "_id": "search_000002",
+    "user_id": "user_000002",
+    "query": "gaming monitor",
+    "results_count": 23,
+    "timestamp": "2026-01-05T21:40:35.542163"
+  }
+]

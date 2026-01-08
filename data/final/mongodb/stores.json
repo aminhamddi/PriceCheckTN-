@@ -1,0 +1,38 @@
+[
+  {
+    "_id": "store_000001",
+    "name": "MyTek",
+    "slug": "mytek",
+    "country": "Tunisia",
+    "url": "https://www.mytek.tn",
+    "logo": null,
+    "trust_score": 4.2,
+    "total_reviews": 1523,
+    "avg_delivery_days": 3,
+    "created_at": "2026-01-05T21:40:34.571166"
+  },
+  {
+    "_id": "store_000002",
+    "name": "Tunisianet",
+    "slug": "tunisianet",
+    "country": "Tunisia",
+    "url": "https://www.tunisianet.com.tn",
+    "logo": null,
+    "trust_score": 4.5,
+    "total_reviews": 2845,
+    "avg_delivery_days": 2,
+    "created_at": "2026-01-05T21:40:34.571166"
+  },
+  {
+    "_id": "store_000003",
+    "name": "LDLC",
+    "slug": "ldlc",
+    "country": "France",
+    "url": "https://www.ldlc.com",
+    "logo": null,
+    "trust_score": 4.7,
+    "total_reviews": 15234,
+    "avg_delivery_days": 5,
+    "created_at": "2026-01-05T21:40:34.571166"
+  }
+]

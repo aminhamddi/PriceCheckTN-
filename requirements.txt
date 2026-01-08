@@ -16,22 +16,22 @@ numpy==1.26.2
 
 # NLP - Arabic
 camel-tools==1.5.7
-pyarabic==0.6.15
+PyArabic==0.6.15
 arabic-reshaper==3.0.0
 python-bidi==0.4.2
 
 # NLP - General
-transformers==4.36.0
+transformers==4.36.2
 torch==2.2.0
 sentence-transformers==2.2.2
-tokenizers==0.15.0
+tokenizers==0.15.2
 
 # NLP - French
 spacy==3.7.2
 
 # Database
 pymongo==4.6.1
-motor==3.3.2  # Async MongoDB
+motor==3.3.2
 
 # Currency
 forex-python==1.8
@@ -39,17 +39,27 @@ forex-python==1.8
 # Utils
 tqdm==4.66.1
 loguru==0.7.2
-tenacity==8.2.3  # Retry logic
+tenacity==8.2.3
 
 # FastAPI (for later)
 fastapi==0.108.0
 uvicorn==0.25.0
 
+# ML / Modeling
+scikit-learn==1.8.0
+joblib==1.5.3
+xgboost==3.1.2
+
 # Testing
 pytest==7.4.3
 pytest-asyncio==0.21.1
 
-# Additional for current scraper (if not already included)
-certifi>=2023.0.0  # SSL certificates for requests
-charset-normalizer>=3.0.0  # Character encoding detection
-urllib3>=2.0.0  # HTTP library (dependency of requests)
+# Encoding / Transport helpers
+certifi==2025.11.12
+charset-normalizer==3.4.4
+urllib3==2.6.2
+
+# Fuzzy matching
+fuzzywuzzy==0.18.0
+python-Levenshtein==0.27.3
+rapidfuzz==3.14.3

@@ -1,0 +1,2252 @@
+[
+  {
+    "_id": "history_000000",
+    "product_id": "prod_00001",
+    "price": 86141.56,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-06T21:40:35.528169",
+    "created_at": "2026-01-05T21:40:35.529162"
+  },
+  {
+    "_id": "history_000001",
+    "product_id": "prod_00001",
+    "price": 89066.33,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-15T21:40:35.529162",
+    "created_at": "2026-01-05T21:40:35.529162"
+  },
+  {
+    "_id": "history_000002",
+    "product_id": "prod_00001",
+    "price": 85458.11,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-22T21:40:35.529162",
+    "created_at": "2026-01-05T21:40:35.529162"
+  },
+  {
+    "_id": "history_000003",
+    "product_id": "prod_00001",
+    "price": 82333.1,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-29T21:40:35.529162",
+    "created_at": "2026-01-05T21:40:35.529162"
+  },
+  {
+    "_id": "history_000004",
+    "product_id": "prod_00001",
+    "price": 86018.32,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2026-01-05T21:40:35.529162",
+    "created_at": "2026-01-05T21:40:35.529162"
+  },
+  {
+    "_id": "history_000005",
+    "product_id": "prod_00002",
+    "price": 66649.44,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-06T21:40:35.529162",
+    "created_at": "2026-01-05T21:40:35.529162"
+  },
+  {
+    "_id": "history_000006",
+    "product_id": "prod_00002",
+    "price": 68419.07,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-15T21:40:35.529162",
+    "created_at": "2026-01-05T21:40:35.529162"
+  },
+  {
+    "_id": "history_000007",
+    "product_id": "prod_00002",
+    "price": 67020.4,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-22T21:40:35.529162",
+    "created_at": "2026-01-05T21:40:35.529162"
+  },
+  {
+    "_id": "history_000008",
+    "product_id": "prod_00002",
+    "price": 67235.89,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-29T21:40:35.529162",
+    "created_at": "2026-01-05T21:40:35.529162"
+  },
+  {
+    "_id": "history_000009",
+    "product_id": "prod_00002",
+    "price": 70122.14,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2026-01-05T21:40:35.529162",
+    "created_at": "2026-01-05T21:40:35.529162"
+  },
+  {
+    "_id": "history_000010",
+    "product_id": "prod_00003",
+    "price": 47165.59,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-06T21:40:35.529162",
+    "created_at": "2026-01-05T21:40:35.529162"
+  },
+  {
+    "_id": "history_000011",
+    "product_id": "prod_00003",
+    "price": 49367.39,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-15T21:40:35.529162",
+    "created_at": "2026-01-05T21:40:35.529162"
+  },
+  {
+    "_id": "history_000012",
+    "product_id": "prod_00003",
+    "price": 50824.11,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-22T21:40:35.529162",
+    "created_at": "2026-01-05T21:40:35.529162"
+  },
+  {
+    "_id": "history_000013",
+    "product_id": "prod_00003",
+    "price": 51442.84,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-29T21:40:35.529162",
+    "created_at": "2026-01-05T21:40:35.529162"
+  },
+  {
+    "_id": "history_000014",
+    "product_id": "prod_00003",
+    "price": 49522.37,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2026-01-05T21:40:35.529162",
+    "created_at": "2026-01-05T21:40:35.529162"
+  },
+  {
+    "_id": "history_000015",
+    "product_id": "prod_00004",
+    "price": 82556.43,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-06T21:40:35.529162",
+    "created_at": "2026-01-05T21:40:35.529162"
+  },
+  {
+    "_id": "history_000016",
+    "product_id": "prod_00004",
+    "price": 85828.15,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-15T21:40:35.529162",
+    "created_at": "2026-01-05T21:40:35.529162"
+  },
+  {
+    "_id": "history_000017",
+    "product_id": "prod_00004",
+    "price": 85740.47,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-22T21:40:35.529162",
+    "created_at": "2026-01-05T21:40:35.529162"
+  },
+  {
+    "_id": "history_000018",
+    "product_id": "prod_00004",
+    "price": 81923.8,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-29T21:40:35.529162",
+    "created_at": "2026-01-05T21:40:35.529162"
+  },
+  {
+    "_id": "history_000019",
+    "product_id": "prod_00004",
+    "price": 84932.45,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2026-01-05T21:40:35.529162",
+    "created_at": "2026-01-05T21:40:35.529162"
+  },
+  {
+    "_id": "history_000020",
+    "product_id": "prod_00005",
+    "price": 65282.05,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-06T21:40:35.529162",
+    "created_at": "2026-01-05T21:40:35.529162"
+  },
+  {
+    "_id": "history_000021",
+    "product_id": "prod_00005",
+    "price": 64589.46,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-15T21:40:35.529162",
+    "created_at": "2026-01-05T21:40:35.529162"
+  },
+  {
+    "_id": "history_000022",
+    "product_id": "prod_00005",
+    "price": 68991.76,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-22T21:40:35.529162",
+    "created_at": "2026-01-05T21:40:35.529162"
+  },
+  {
+    "_id": "history_000023",
+    "product_id": "prod_00005",
+    "price": 64672.46,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-29T21:40:35.529162",
+    "created_at": "2026-01-05T21:40:35.529162"
+  },
+  {
+    "_id": "history_000024",
+    "product_id": "prod_00005",
+    "price": 66369.12,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2026-01-05T21:40:35.529162",
+    "created_at": "2026-01-05T21:40:35.529162"
+  },
+  {
+    "_id": "history_000025",
+    "product_id": "prod_00006",
+    "price": 39304.02,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-06T21:40:35.529162",
+    "created_at": "2026-01-05T21:40:35.529162"
+  },
+  {
+    "_id": "history_000026",
+    "product_id": "prod_00006",
+    "price": 39500.28,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-15T21:40:35.529162",
+    "created_at": "2026-01-05T21:40:35.529162"
+  },
+  {
+    "_id": "history_000027",
+    "product_id": "prod_00006",
+    "price": 38024.15,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-22T21:40:35.529162",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000028",
+    "product_id": "prod_00006",
+    "price": 40584.88,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-29T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000029",
+    "product_id": "prod_00006",
+    "price": 40823.07,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2026-01-05T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000030",
+    "product_id": "prod_00007",
+    "price": 46589.37,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-06T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000031",
+    "product_id": "prod_00007",
+    "price": 48676.92,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-15T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000032",
+    "product_id": "prod_00007",
+    "price": 47591.72,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-22T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000033",
+    "product_id": "prod_00007",
+    "price": 47148.31,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-29T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000034",
+    "product_id": "prod_00007",
+    "price": 48260.24,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2026-01-05T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000035",
+    "product_id": "prod_00008",
+    "price": 29009.44,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-06T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000036",
+    "product_id": "prod_00008",
+    "price": 29189.68,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-15T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000037",
+    "product_id": "prod_00008",
+    "price": 29682.43,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-22T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000038",
+    "product_id": "prod_00008",
+    "price": 28753.19,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-29T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000039",
+    "product_id": "prod_00008",
+    "price": 29712.2,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2026-01-05T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000040",
+    "product_id": "prod_00009",
+    "price": 92405.75,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-06T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000041",
+    "product_id": "prod_00009",
+    "price": 88461.24,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-15T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000042",
+    "product_id": "prod_00009",
+    "price": 84930.31,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-22T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000043",
+    "product_id": "prod_00009",
+    "price": 91783.34,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-29T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000044",
+    "product_id": "prod_00009",
+    "price": 89614.6,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2026-01-05T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000045",
+    "product_id": "prod_00010",
+    "price": 76586.5,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-06T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000046",
+    "product_id": "prod_00010",
+    "price": 73676.14,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-15T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000047",
+    "product_id": "prod_00010",
+    "price": 77187.41,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-22T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000048",
+    "product_id": "prod_00010",
+    "price": 76096.49,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-29T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000049",
+    "product_id": "prod_00010",
+    "price": 74538.76,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2026-01-05T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000050",
+    "product_id": "prod_00011",
+    "price": 51024.71,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-06T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000051",
+    "product_id": "prod_00011",
+    "price": 50658.41,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-15T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000052",
+    "product_id": "prod_00011",
+    "price": 51876.13,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-22T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000053",
+    "product_id": "prod_00011",
+    "price": 48874.2,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-29T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000054",
+    "product_id": "prod_00011",
+    "price": 47866.35,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2026-01-05T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000055",
+    "product_id": "prod_00012",
+    "price": 156746.33,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-06T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000056",
+    "product_id": "prod_00012",
+    "price": 158433.85,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-15T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000057",
+    "product_id": "prod_00012",
+    "price": 149565.24,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-22T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000058",
+    "product_id": "prod_00012",
+    "price": 147610.36,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-29T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000059",
+    "product_id": "prod_00012",
+    "price": 150500.97,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2026-01-05T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000060",
+    "product_id": "prod_00013",
+    "price": 78555.85,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-06T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000061",
+    "product_id": "prod_00013",
+    "price": 79906.2,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-15T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000062",
+    "product_id": "prod_00013",
+    "price": 80627.25,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-22T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000063",
+    "product_id": "prod_00013",
+    "price": 80734.89,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-29T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000064",
+    "product_id": "prod_00013",
+    "price": 74541.46,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2026-01-05T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000065",
+    "product_id": "prod_00014",
+    "price": 40728.85,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-06T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000066",
+    "product_id": "prod_00014",
+    "price": 38564.62,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-15T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000067",
+    "product_id": "prod_00014",
+    "price": 40622.05,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-22T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000068",
+    "product_id": "prod_00014",
+    "price": 37138.49,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-29T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000069",
+    "product_id": "prod_00014",
+    "price": 38844.84,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2026-01-05T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000070",
+    "product_id": "prod_00015",
+    "price": 45587.76,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-06T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000071",
+    "product_id": "prod_00015",
+    "price": 42747.74,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-15T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000072",
+    "product_id": "prod_00015",
+    "price": 41867.13,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-22T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000073",
+    "product_id": "prod_00015",
+    "price": 42690.85,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-29T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000074",
+    "product_id": "prod_00015",
+    "price": 43602.0,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2026-01-05T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000075",
+    "product_id": "prod_00016",
+    "price": 67934.02,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-06T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000076",
+    "product_id": "prod_00016",
+    "price": 66218.3,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-15T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000077",
+    "product_id": "prod_00016",
+    "price": 67830.13,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-22T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000078",
+    "product_id": "prod_00016",
+    "price": 69144.21,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-29T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000079",
+    "product_id": "prod_00016",
+    "price": 66479.7,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2026-01-05T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000080",
+    "product_id": "prod_00017",
+    "price": 37904.29,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-06T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000081",
+    "product_id": "prod_00017",
+    "price": 37787.26,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-15T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000082",
+    "product_id": "prod_00017",
+    "price": 38057.96,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-22T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000083",
+    "product_id": "prod_00017",
+    "price": 39844.34,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-29T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000084",
+    "product_id": "prod_00017",
+    "price": 37112.71,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2026-01-05T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000085",
+    "product_id": "prod_00018",
+    "price": 44238.46,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-06T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000086",
+    "product_id": "prod_00018",
+    "price": 44997.04,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-15T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000087",
+    "product_id": "prod_00018",
+    "price": 46154.54,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-22T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000088",
+    "product_id": "prod_00018",
+    "price": 44628.76,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-29T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000089",
+    "product_id": "prod_00018",
+    "price": 44816.21,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2026-01-05T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000090",
+    "product_id": "prod_00019",
+    "price": 282485.42,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-06T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000091",
+    "product_id": "prod_00019",
+    "price": 274464.63,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-15T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000092",
+    "product_id": "prod_00019",
+    "price": 267397.79,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-22T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000093",
+    "product_id": "prod_00019",
+    "price": 264094.06,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-29T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000094",
+    "product_id": "prod_00019",
+    "price": 266279.11,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2026-01-05T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000095",
+    "product_id": "prod_00020",
+    "price": 309542.34,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-06T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000096",
+    "product_id": "prod_00020",
+    "price": 287584.87,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-15T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000097",
+    "product_id": "prod_00020",
+    "price": 285931.61,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-22T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000098",
+    "product_id": "prod_00020",
+    "price": 287080.49,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-29T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000099",
+    "product_id": "prod_00020",
+    "price": 281157.62,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2026-01-05T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000100",
+    "product_id": "prod_00021",
+    "price": 284579.26,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-06T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000101",
+    "product_id": "prod_00021",
+    "price": 290665.1,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-15T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.530161"
+  },
+  {
+    "_id": "history_000102",
+    "product_id": "prod_00021",
+    "price": 274160.12,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-22T21:40:35.530161",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000103",
+    "product_id": "prod_00021",
+    "price": 286816.73,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-29T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000104",
+    "product_id": "prod_00021",
+    "price": 266291.06,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2026-01-05T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000105",
+    "product_id": "prod_00022",
+    "price": 256776.43,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-06T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000106",
+    "product_id": "prod_00022",
+    "price": 256627.83,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-15T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000107",
+    "product_id": "prod_00022",
+    "price": 252247.25,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-22T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000108",
+    "product_id": "prod_00022",
+    "price": 245160.26,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-29T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000109",
+    "product_id": "prod_00022",
+    "price": 262144.35,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2026-01-05T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000110",
+    "product_id": "prod_00023",
+    "price": 119938.36,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-06T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000111",
+    "product_id": "prod_00023",
+    "price": 125665.1,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-15T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000112",
+    "product_id": "prod_00023",
+    "price": 121820.98,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-22T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000113",
+    "product_id": "prod_00023",
+    "price": 127307.47,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-29T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000114",
+    "product_id": "prod_00023",
+    "price": 122969.7,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2026-01-05T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000115",
+    "product_id": "prod_00024",
+    "price": 102438.29,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-06T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000116",
+    "product_id": "prod_00024",
+    "price": 111508.92,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-15T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000117",
+    "product_id": "prod_00024",
+    "price": 104670.92,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-22T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000118",
+    "product_id": "prod_00024",
+    "price": 112231.88,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-29T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000119",
+    "product_id": "prod_00024",
+    "price": 110137.68,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2026-01-05T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000120",
+    "product_id": "prod_00025",
+    "price": 153842.81,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-06T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000121",
+    "product_id": "prod_00025",
+    "price": 145538.85,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-15T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000122",
+    "product_id": "prod_00025",
+    "price": 149382.58,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-22T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000123",
+    "product_id": "prod_00025",
+    "price": 160119.73,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-29T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000124",
+    "product_id": "prod_00025",
+    "price": 157605.32,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2026-01-05T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000125",
+    "product_id": "prod_00026",
+    "price": 156015.57,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-06T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000126",
+    "product_id": "prod_00026",
+    "price": 151670.27,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-15T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000127",
+    "product_id": "prod_00026",
+    "price": 156396.94,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-22T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000128",
+    "product_id": "prod_00026",
+    "price": 163957.26,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-29T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000129",
+    "product_id": "prod_00026",
+    "price": 164806.78,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2026-01-05T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000130",
+    "product_id": "prod_00027",
+    "price": 161789.56,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-06T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000131",
+    "product_id": "prod_00027",
+    "price": 159207.08,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-15T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000132",
+    "product_id": "prod_00027",
+    "price": 163174.52,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-22T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000133",
+    "product_id": "prod_00027",
+    "price": 162673.34,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-29T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000134",
+    "product_id": "prod_00027",
+    "price": 157502.03,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2026-01-05T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000135",
+    "product_id": "prod_00028",
+    "price": 145370.36,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-06T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000136",
+    "product_id": "prod_00028",
+    "price": 146172.22,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-15T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000137",
+    "product_id": "prod_00028",
+    "price": 154279.49,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-22T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000138",
+    "product_id": "prod_00028",
+    "price": 156710.22,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-29T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000139",
+    "product_id": "prod_00028",
+    "price": 152633.6,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2026-01-05T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000140",
+    "product_id": "prod_00029",
+    "price": 84270.6,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-06T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000141",
+    "product_id": "prod_00029",
+    "price": 80999.23,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-15T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000142",
+    "product_id": "prod_00029",
+    "price": 82200.35,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-22T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000143",
+    "product_id": "prod_00029",
+    "price": 84490.41,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-29T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000144",
+    "product_id": "prod_00029",
+    "price": 85111.63,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2026-01-05T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000145",
+    "product_id": "prod_00030",
+    "price": 62892.02,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-06T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000146",
+    "product_id": "prod_00030",
+    "price": 64618.0,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-15T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000147",
+    "product_id": "prod_00030",
+    "price": 63082.27,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-22T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000148",
+    "product_id": "prod_00030",
+    "price": 63752.41,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-29T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000149",
+    "product_id": "prod_00030",
+    "price": 62993.04,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2026-01-05T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000150",
+    "product_id": "prod_00031",
+    "price": 78604.57,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-06T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000151",
+    "product_id": "prod_00031",
+    "price": 77757.48,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-15T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000152",
+    "product_id": "prod_00031",
+    "price": 77715.89,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-22T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000153",
+    "product_id": "prod_00031",
+    "price": 81863.08,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-29T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000154",
+    "product_id": "prod_00031",
+    "price": 75699.25,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2026-01-05T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000155",
+    "product_id": "prod_00032",
+    "price": 79208.67,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-06T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000156",
+    "product_id": "prod_00032",
+    "price": 79072.98,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-15T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000157",
+    "product_id": "prod_00032",
+    "price": 76446.59,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-22T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000158",
+    "product_id": "prod_00032",
+    "price": 78452.8,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-29T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000159",
+    "product_id": "prod_00032",
+    "price": 75921.45,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2026-01-05T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000160",
+    "product_id": "prod_00033",
+    "price": 39848.41,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-06T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000161",
+    "product_id": "prod_00033",
+    "price": 41817.06,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-15T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000162",
+    "product_id": "prod_00033",
+    "price": 41467.43,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-22T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000163",
+    "product_id": "prod_00033",
+    "price": 39892.64,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-29T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000164",
+    "product_id": "prod_00033",
+    "price": 41686.96,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2026-01-05T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000165",
+    "product_id": "prod_00034",
+    "price": 55576.84,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-06T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000166",
+    "product_id": "prod_00034",
+    "price": 58734.74,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-15T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000167",
+    "product_id": "prod_00034",
+    "price": 55902.07,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-22T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000168",
+    "product_id": "prod_00034",
+    "price": 59087.24,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-29T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000169",
+    "product_id": "prod_00034",
+    "price": 57398.07,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2026-01-05T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000170",
+    "product_id": "prod_00035",
+    "price": 49541.09,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-06T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000171",
+    "product_id": "prod_00035",
+    "price": 48665.49,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-15T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000172",
+    "product_id": "prod_00035",
+    "price": 47925.76,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-22T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000173",
+    "product_id": "prod_00035",
+    "price": 51932.36,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-29T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000174",
+    "product_id": "prod_00035",
+    "price": 49948.89,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2026-01-05T21:40:35.531160",
+    "created_at": "2026-01-05T21:40:35.531160"
+  },
+  {
+    "_id": "history_000175",
+    "product_id": "prod_00036",
+    "price": 60672.79,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-06T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000176",
+    "product_id": "prod_00036",
+    "price": 63437.14,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-15T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000177",
+    "product_id": "prod_00036",
+    "price": 65484.7,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-22T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000178",
+    "product_id": "prod_00036",
+    "price": 64605.81,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-29T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000179",
+    "product_id": "prod_00036",
+    "price": 62671.22,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2026-01-05T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000180",
+    "product_id": "prod_00037",
+    "price": 33999.25,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-06T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000181",
+    "product_id": "prod_00037",
+    "price": 32813.26,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-15T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000182",
+    "product_id": "prod_00037",
+    "price": 33832.61,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-22T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000183",
+    "product_id": "prod_00037",
+    "price": 32316.2,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-29T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000184",
+    "product_id": "prod_00037",
+    "price": 32604.79,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2026-01-05T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000185",
+    "product_id": "prod_00038",
+    "price": 6251.64,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-06T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000186",
+    "product_id": "prod_00038",
+    "price": 5892.17,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-15T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000187",
+    "product_id": "prod_00038",
+    "price": 5883.92,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-22T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000188",
+    "product_id": "prod_00038",
+    "price": 5807.83,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-29T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000189",
+    "product_id": "prod_00038",
+    "price": 5779.03,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2026-01-05T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000190",
+    "product_id": "prod_00039",
+    "price": 155954.65,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-06T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000191",
+    "product_id": "prod_00039",
+    "price": 151073.27,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-15T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000192",
+    "product_id": "prod_00039",
+    "price": 151096.24,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-22T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000193",
+    "product_id": "prod_00039",
+    "price": 151159.52,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-29T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000194",
+    "product_id": "prod_00039",
+    "price": 148182.32,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2026-01-05T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000195",
+    "product_id": "prod_00040",
+    "price": 106743.12,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-06T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000196",
+    "product_id": "prod_00040",
+    "price": 106328.44,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-15T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000197",
+    "product_id": "prod_00040",
+    "price": 106786.69,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-22T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000198",
+    "product_id": "prod_00040",
+    "price": 108647.17,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-29T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000199",
+    "product_id": "prod_00040",
+    "price": 104674.85,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2026-01-05T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000200",
+    "product_id": "prod_00041",
+    "price": 154100.47,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-06T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000201",
+    "product_id": "prod_00041",
+    "price": 153230.32,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-15T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000202",
+    "product_id": "prod_00041",
+    "price": 140546.99,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-22T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000203",
+    "product_id": "prod_00041",
+    "price": 152154.7,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-29T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000204",
+    "product_id": "prod_00041",
+    "price": 143768.27,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2026-01-05T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000205",
+    "product_id": "prod_00042",
+    "price": 132022.52,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-06T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000206",
+    "product_id": "prod_00042",
+    "price": 125535.18,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-15T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000207",
+    "product_id": "prod_00042",
+    "price": 132942.79,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-22T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000208",
+    "product_id": "prod_00042",
+    "price": 125935.78,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-29T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000209",
+    "product_id": "prod_00042",
+    "price": 131838.6,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2026-01-05T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000210",
+    "product_id": "prod_00043",
+    "price": 115099.78,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-06T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000211",
+    "product_id": "prod_00043",
+    "price": 107341.83,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-15T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000212",
+    "product_id": "prod_00043",
+    "price": 109110.85,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-22T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000213",
+    "product_id": "prod_00043",
+    "price": 114145.22,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-29T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000214",
+    "product_id": "prod_00043",
+    "price": 105455.56,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2026-01-05T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000215",
+    "product_id": "prod_00044",
+    "price": 113334.89,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-06T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000216",
+    "product_id": "prod_00044",
+    "price": 112166.16,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-15T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000217",
+    "product_id": "prod_00044",
+    "price": 109348.53,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-22T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000218",
+    "product_id": "prod_00044",
+    "price": 112121.84,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-29T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000219",
+    "product_id": "prod_00044",
+    "price": 111967.14,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2026-01-05T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000220",
+    "product_id": "prod_00045",
+    "price": 70708.42,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-06T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000221",
+    "product_id": "prod_00045",
+    "price": 68719.8,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-15T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000222",
+    "product_id": "prod_00045",
+    "price": 70331.01,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-22T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000223",
+    "product_id": "prod_00045",
+    "price": 68776.17,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-29T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000224",
+    "product_id": "prod_00045",
+    "price": 71529.23,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2026-01-05T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000225",
+    "product_id": "prod_00046",
+    "price": 62666.86,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-06T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000226",
+    "product_id": "prod_00046",
+    "price": 65510.7,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-15T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000227",
+    "product_id": "prod_00046",
+    "price": 61209.88,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-22T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000228",
+    "product_id": "prod_00046",
+    "price": 60420.28,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-29T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000229",
+    "product_id": "prod_00046",
+    "price": 61826.37,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2026-01-05T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000230",
+    "product_id": "prod_00047",
+    "price": 59718.79,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-06T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000231",
+    "product_id": "prod_00047",
+    "price": 57286.2,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-15T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000232",
+    "product_id": "prod_00047",
+    "price": 61222.22,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-22T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000233",
+    "product_id": "prod_00047",
+    "price": 58121.85,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-29T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000234",
+    "product_id": "prod_00047",
+    "price": 59980.52,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2026-01-05T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000235",
+    "product_id": "prod_00048",
+    "price": 39366.0,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-06T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000236",
+    "product_id": "prod_00048",
+    "price": 41920.65,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-15T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000237",
+    "product_id": "prod_00048",
+    "price": 39948.16,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-22T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000238",
+    "product_id": "prod_00048",
+    "price": 41801.88,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-29T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000239",
+    "product_id": "prod_00048",
+    "price": 41047.18,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2026-01-05T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000240",
+    "product_id": "prod_00049",
+    "price": 37445.82,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-06T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000241",
+    "product_id": "prod_00049",
+    "price": 39892.72,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-15T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000242",
+    "product_id": "prod_00049",
+    "price": 37808.16,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-22T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000243",
+    "product_id": "prod_00049",
+    "price": 37475.53,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-29T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000244",
+    "product_id": "prod_00049",
+    "price": 36737.27,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2026-01-05T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000245",
+    "product_id": "prod_00050",
+    "price": 34384.08,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-06T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000246",
+    "product_id": "prod_00050",
+    "price": 35259.74,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-15T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000247",
+    "product_id": "prod_00050",
+    "price": 32975.03,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-22T21:40:35.532160",
+    "created_at": "2026-01-05T21:40:35.532160"
+  },
+  {
+    "_id": "history_000248",
+    "product_id": "prod_00050",
+    "price": 32993.34,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2025-12-29T21:40:35.533160",
+    "created_at": "2026-01-05T21:40:35.533160"
+  },
+  {
+    "_id": "history_000249",
+    "product_id": "prod_00050",
+    "price": 34632.86,
+    "currency": "EUR",
+    "source": "ldlc",
+    "date": "2026-01-05T21:40:35.533160",
+    "created_at": "2026-01-05T21:40:35.533160"
+  }
+]

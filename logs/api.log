@@ -151,3 +151,37 @@ Stack trace:
 2026-01-03 21:20:00.196 | INFO     | api.main:predict_fake_review:135 - 📝 Received prediction request (length: 41 chars)
 2026-01-03 21:20:00.200 | INFO     | api.main:predict_fake_review:149 - 🎯 Prediction: REAL (confidence: 96.25%)
 2026-01-04 02:53:49.128 | INFO     | api.main:shutdown_event:70 - 👋 Shutting down FastAPI application
+2026-01-05 21:26:56.304 | INFO     | api.main:startup_event:56 - 🚀 Starting FastAPI application
+2026-01-05 21:26:56.306 | INFO     | api.main:startup_event:57 - 📋 Version: 1.0.0
+2026-01-05 21:26:56.307 | INFO     | api.ml_model:load_model:44 - Loading model from: /app/models/fake_review_detector_xgboost.pkl
+2026-01-05 21:26:58.074 | SUCCESS  | api.ml_model:load_model:49 - ✅ XGBoost model loaded successfully
+2026-01-05 21:26:58.075 | INFO     | api.ml_model:load_model:51 - Loading scaler from: /app/models/feature_scaler.pkl
+2026-01-05 21:26:58.097 | SUCCESS  | api.ml_model:load_model:56 - ✅ Scaler loaded successfully
+2026-01-05 21:26:58.098 | SUCCESS  | api.main:startup_event:61 - ✅ Model loaded successfully
+2026-01-06 22:07:46.551 | INFO     | api.main:startup_event:56 - 🚀 Starting FastAPI application
+2026-01-06 22:07:46.553 | INFO     | api.main:startup_event:57 - 📋 Version: 1.0.0
+2026-01-06 22:07:46.553 | INFO     | api.ml_model:load_model:44 - Loading model from: /app/models/fake_review_detector_xgboost.pkl
+2026-01-06 22:07:48.261 | SUCCESS  | api.ml_model:load_model:49 - ✅ XGBoost model loaded successfully
+2026-01-06 22:07:48.262 | INFO     | api.ml_model:load_model:51 - Loading scaler from: /app/models/feature_scaler.pkl
+2026-01-06 22:07:48.286 | SUCCESS  | api.ml_model:load_model:56 - ✅ Scaler loaded successfully
+2026-01-06 22:07:48.287 | SUCCESS  | api.main:startup_event:61 - ✅ Model loaded successfully
+2026-01-07 14:12:45.643 | INFO     | api.main:predict_fake_review:135 - 📝 Received prediction request (length: 41 chars)
+2026-01-07 14:12:46.115 | INFO     | api.main:predict_fake_review:149 - 🎯 Prediction: REAL (confidence: 96.25%)
+2026-01-07 14:13:40.227 | INFO     | api.main:predict_fake_review:135 - 📝 Received prediction request (length: 32 chars)
+2026-01-07 14:13:40.265 | INFO     | api.main:predict_fake_review:149 - 🎯 Prediction: REAL (confidence: 95.31%)
+2026-01-07 14:14:38.245 | INFO     | api.main:predict_fake_review:135 - 📝 Received prediction request (length: 21 chars)
+2026-01-07 14:14:38.260 | INFO     | api.main:predict_fake_review:149 - 🎯 Prediction: REAL (confidence: 88.08%)
+2026-01-07 14:16:55.639 | INFO     | api.main:predict_fake_review:135 - 📝 Received prediction request (length: 112 chars)
+2026-01-07 14:16:55.645 | INFO     | api.main:predict_fake_review:149 - 🎯 Prediction: REAL (confidence: 59.26%)
+2026-01-07 14:19:18.892 | INFO     | api.main:predict_fake_review:135 - 📝 Received prediction request (length: 48 chars)
+2026-01-07 14:19:18.899 | INFO     | api.main:predict_fake_review:149 - 🎯 Prediction: FAKE (confidence: 95.78%)
+2026-01-07 14:21:37.475 | INFO     | api.main:predict_fake_review:135 - 📝 Received prediction request (length: 90 chars)
+2026-01-07 14:21:37.533 | INFO     | api.main:predict_fake_review:149 - 🎯 Prediction: FAKE (confidence: 62.22%)
+2026-01-07 16:03:39.609 | INFO     | api.main:startup_event:56 - 🚀 Starting FastAPI application
+2026-01-07 16:03:39.610 | INFO     | api.main:startup_event:57 - 📋 Version: 1.0.0
+2026-01-07 16:03:39.611 | INFO     | api.ml_model:load_model:44 - Loading model from: /app/models/fake_review_detector_xgboost.pkl
+2026-01-07 16:03:42.604 | SUCCESS  | api.ml_model:load_model:49 - ✅ XGBoost model loaded successfully
+2026-01-07 16:03:42.606 | INFO     | api.ml_model:load_model:51 - Loading scaler from: /app/models/feature_scaler.pkl
+2026-01-07 16:03:42.642 | SUCCESS  | api.ml_model:load_model:56 - ✅ Scaler loaded successfully
+2026-01-07 16:03:42.645 | SUCCESS  | api.main:startup_event:61 - ✅ Model loaded successfully
+2026-01-07 16:42:42.419 | INFO     | api.main:shutdown_event:70 - 👋 Shutting down FastAPI application

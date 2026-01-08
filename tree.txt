@@ -1,0 +1,129 @@
+pricecheck-ml/
+├── =0.26.0
+├── .git/
+├── .gitignore
+├── .idea/
+├── .pytest_cache/
+├── .vscode/
+├── Dockerfile
+├── docker-compose.yml
+├── config.py
+├── requirements.txt
+├── requirements-api.txt
+├── scrape_ldlc.py
+├── scrape_mytek.py
+├── scrape_tunisianet.py
+├── __pycache__/
+├── venv/
+├── venv311/
+├── api/
+│   ├── config.py
+│   ├── main.py
+│   ├── main_test.py
+│   ├── ml_model.py
+│   ├── models.py
+│   ├── models/
+│   │   └── bert_predictor.py
+│   └── __pycache__/
+├── data/
+│   ├── final/
+│   │   ├── consolidation_report.txt
+│   │   ├── consolidation_stats.json
+│   │   ├── fake_reviews_detected.csv
+│   │   ├── matching_report.txt
+│   │   ├── matching_stats.json
+│   │   ├── prediction_report.txt
+│   │   ├── prediction_stats.json
+│   │   ├── price_comparison.csv
+│   │   ├── price_comparison.json
+│   │   ├── products_unified_20260104_212917.csv
+│   │   ├── products_unified.csv
+│   │   ├── products_unified.json
+│   │   ├── reviews_with_predictions_sample.json
+│   │   ├── reviews_with_predictions.csv
+│   │   ├── reviews_with_predictions.json
+│   │   ├── unmatched_fr_products.csv
+│   │   ├── unmatched_tn_products.csv
+│   │   ├── metadata/
+│   │   └── mongodb/
+│   ├── processed/
+│   │   ├── 00_initial_data.csv
+│   │   ├── reviews_cleaned.csv
+│   │   ├── reviews_with_features.csv
+│   │   └── train_test_split.json
+│   └── raw/
+│       ├── ldlc_latest.csv
+│       ├── ldlc_latest.json
+│       ├── ldlc_products_20251229_004750.csv
+│       ├── ldlc_products_20251229_004750.json
+│       ├── ldlc_products_20260102_161019.csv
+│       └── (many other ldlc_*.csv/.json files)
+├── logs/
+├── models/
+│   ├── bert/
+│   ├── saved_models/
+│   │   ├── bert_fake_review/
+│   │   │   ├── checkpoints/
+│   │   │   │   ├── checkpoint-2022/
+│   │   │   │   │   ├── config.json
+│   │   │   │   │   ├── optimizer.pt
+│   │   │   │   │   ├── rng_state.pth
+│   │   │   │   │   ├── scheduler.pt
+│   │   │   │   │   ├── trainer_state.json
+│   │   │   │   │   └── training_args.bin
+│   │   │   │   └── checkpoint-3033/
+│   │   │   │       ├── config.json
+│   │   │   │       ├── model.safetensors
+│   │   │   │       ├── rng_state.pth
+│   │   │   │       ├── scheduler.pt
+│   │   │   │       ├── trainer_state.json
+│   │   │   │       └── training_args.bin
+│   │   │   └── final_model/
+│   │   │       ├── config.json
+│   │   │       ├── metadata.json
+│   │   │       ├── special_tokens_map.json
+│   │   │       ├── tokenizer.json
+│   │   │       ├── tokenizer_config.json
+│   │   │       ├── training_history.json
+│   │   │       └── vocab.txt
+│   ├── feature_names.txt
+│   ├── feature_scaler.pkl
+│   └── fake_review_detector_xgboost.pkl
+├── notebooks/
+│   ├── 01_data_loading.ipynb
+│   ├── 02_reviews_eda.ipynb
+│   ├── 02b_text_preprocessing.ipynb
+│   ├── 03_feature_engineering.ipynb
+│   └── 04_ml_models.ipynb
+├── scrapers/
+│   ├── hybrid_scraper.py
+│   ├── simple_scraper.py
+│   ├── france/
+│   ├── tunisia/
+│   └── __pycache__/
+├── scripts/
+│   ├── 1_consolidate_products.py
+│   ├── 2_match_products_tn_fr.py
+│   ├── 3_predict_reviews.py
+│   ├── 4_generate_metadata.py
+│   ├── 5_export_for_mongodb.py
+│   └── train_bert.py
+├── src/
+│   └── data/
+└── utils/
+    ├── currency_converter.py
+    ├── fuzzy_matcher.py
+    ├── product_normalizer.py
+    ├── robots_checker.py
+    └── __pycache__/
+
+Sibling repo: pricecheck-mlops/
+├── .git/
+├── .idea/
+├── comparison/
+├── data/
+├── mlruns.db
+├── nlp/
+├── notebooks/
+├── requirements.txt
+└── scrapers/

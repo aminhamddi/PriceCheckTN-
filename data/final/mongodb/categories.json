@@ -1,0 +1,74 @@
+[
+  {
+    "_id": "cat_000001",
+    "name": "Laptop",
+    "name_fr": "Ordinateurs Portables",
+    "name_ar": "حواسيب محمولة",
+    "slug": "laptop",
+    "icon": "💻",
+    "created_at": "2026-01-05T21:40:34.567165"
+  },
+  {
+    "_id": "cat_000002",
+    "name": "Desktop",
+    "name_fr": "Ordinateurs de Bureau",
+    "name_ar": "حواسيب مكتبية",
+    "slug": "desktop",
+    "icon": "🖥️",
+    "created_at": "2026-01-05T21:40:34.567165"
+  },
+  {
+    "_id": "cat_000003",
+    "name": "Monitor",
+    "name_fr": "Écrans",
+    "name_ar": "شاشات",
+    "slug": "monitor",
+    "icon": "🖥️",
+    "created_at": "2026-01-05T21:40:34.567165"
+  },
+  {
+    "_id": "cat_000004",
+    "name": "Graphics Card",
+    "name_fr": "Cartes Graphiques",
+    "name_ar": "بطاقات الرسومات",
+    "slug": "graphics-card",
+    "icon": "🎮",
+    "created_at": "2026-01-05T21:40:34.567165"
+  },
+  {
+    "_id": "cat_000005",
+    "name": "Storage",
+    "name_fr": "Stockage",
+    "name_ar": "تخزين",
+    "slug": "storage",
+    "icon": "💾",
+    "created_at": "2026-01-05T21:40:34.567165"
+  },
+  {
+    "_id": "cat_000006",
+    "name": "Keyboard",
+    "name_fr": "Claviers",
+    "name_ar": "لوحات مفاتيح",
+    "slug": "keyboard",
+    "icon": "⌨️",
+    "created_at": "2026-01-05T21:40:34.567165"
+  },
+  {
+    "_id": "cat_000007",
+    "name": "Mouse",
+    "name_fr": "Souris",
+    "name_ar": "فأرة",
+    "slug": "mouse",
+    "icon": "🖱️",
+    "created_at": "2026-01-05T21:40:34.567165"
+  },
+  {
+    "_id": "cat_000008",
+    "name": "Other",
+    "name_fr": "Autre",
+    "name_ar": "أخرى",
+    "slug": "other",
+    "icon": "📦",
+    "created_at": "2026-01-05T21:40:34.567165"
+  }
+]

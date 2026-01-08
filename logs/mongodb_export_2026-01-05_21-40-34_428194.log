@@ -1,0 +1,75 @@
+2026-01-05 21:40:34.430 | INFO     | __main__:__init__:43 - 🚀 MongoDBExporter initialized
+2026-01-05 21:40:34.432 | INFO     | __main__:run:567 - ============================================================
+2026-01-05 21:40:34.433 | INFO     | __main__:run:568 - 🚀 STARTING MONGODB EXPORT
+2026-01-05 21:40:34.433 | INFO     | __main__:run:569 - ============================================================
+2026-01-05 21:40:34.433 | INFO     | __main__:load_datasets:47 - 
+📂 Loading datasets...
+2026-01-05 21:40:34.471 | INFO     | __main__:load_datasets:62 - ✅ Loaded products: 1056 rows
+2026-01-05 21:40:34.487 | INFO     | __main__:load_datasets:62 - ✅ Loaded price_comparison: 2 rows
+2026-01-05 21:40:34.560 | INFO     | __main__:load_datasets:62 - ✅ Loaded reviews: 5000 rows
+2026-01-05 21:40:34.561 | INFO     | __main__:run:575 - 
+📦 Creating MongoDB collections...
+2026-01-05 21:40:34.561 | INFO     | __main__:export_users_collection:95 - 
+👥 Creating Users collection...
+2026-01-05 21:40:34.562 | INFO     | __main__:export_users_collection:116 - ✅ Created 2 sample users
+2026-01-05 21:40:34.563 | INFO     | __main__:save_collection:444 - ✅ Saved users.json (2 documents)
+2026-01-05 21:40:34.564 | INFO     | __main__:export_user_profiles_collection:121 - 
+📋 Creating UserProfiles collection...
+2026-01-05 21:40:34.564 | INFO     | __main__:export_user_profiles_collection:144 - ✅ Created 2 user profiles
+2026-01-05 21:40:34.566 | INFO     | __main__:save_collection:444 - ✅ Saved user_profiles.json (2 documents)
+2026-01-05 21:40:34.567 | INFO     | __main__:export_categories_collection:149 - 
+🏷️  Creating Categories collection...
+2026-01-05 21:40:34.567 | INFO     | __main__:export_categories_collection:226 - ✅ Created 8 categories
+2026-01-05 21:40:34.569 | INFO     | __main__:save_collection:444 - ✅ Saved categories.json (8 documents)
+2026-01-05 21:40:34.570 | INFO     | __main__:export_stores_collection:231 - 
+🏪 Creating Stores collection...
+2026-01-05 21:40:34.571 | INFO     | __main__:export_stores_collection:272 - ✅ Created 3 stores
+2026-01-05 21:40:34.573 | INFO     | __main__:save_collection:444 - ✅ Saved stores.json (3 documents)
+2026-01-05 21:40:34.573 | INFO     | __main__:export_products_collection:277 - 
+📦 Creating Products collection...
+2026-01-05 21:40:34.589 | INFO     | __main__:export_products_collection:324 -    Processed 100/1056 products
+2026-01-05 21:40:34.601 | INFO     | __main__:export_products_collection:324 -    Processed 200/1056 products
+2026-01-05 21:40:34.613 | INFO     | __main__:export_products_collection:324 -    Processed 300/1056 products
+2026-01-05 21:40:34.629 | INFO     | __main__:export_products_collection:324 -    Processed 400/1056 products
+2026-01-05 21:40:34.641 | INFO     | __main__:export_products_collection:324 -    Processed 500/1056 products
+2026-01-05 21:40:34.654 | INFO     | __main__:export_products_collection:324 -    Processed 600/1056 products
+2026-01-05 21:40:34.666 | INFO     | __main__:export_products_collection:324 -    Processed 700/1056 products
+2026-01-05 21:40:34.677 | INFO     | __main__:export_products_collection:324 -    Processed 800/1056 products
+2026-01-05 21:40:34.689 | INFO     | __main__:export_products_collection:324 -    Processed 900/1056 products
+2026-01-05 21:40:34.704 | INFO     | __main__:export_products_collection:324 -    Processed 1000/1056 products
+2026-01-05 21:40:34.713 | INFO     | __main__:export_products_collection:326 - ✅ Created 1056 products
+2026-01-05 21:40:34.747 | INFO     | __main__:save_collection:444 - ✅ Saved products.json (1056 documents)
+2026-01-05 21:40:34.748 | INFO     | __main__:export_reviews_collection:331 - 
+💬 Creating Reviews collection...
+2026-01-05 21:40:34.812 | INFO     | __main__:export_reviews_collection:367 -    Processed 500/5000 reviews
+2026-01-05 21:40:34.876 | INFO     | __main__:export_reviews_collection:367 -    Processed 1000/5000 reviews
+2026-01-05 21:40:34.936 | INFO     | __main__:export_reviews_collection:367 -    Processed 1500/5000 reviews
+2026-01-05 21:40:35.000 | INFO     | __main__:export_reviews_collection:367 -    Processed 2000/5000 reviews
+2026-01-05 21:40:35.056 | INFO     | __main__:export_reviews_collection:367 -    Processed 2500/5000 reviews
+2026-01-05 21:40:35.117 | INFO     | __main__:export_reviews_collection:367 -    Processed 3000/5000 reviews
+2026-01-05 21:40:35.179 | INFO     | __main__:export_reviews_collection:367 -    Processed 3500/5000 reviews
+2026-01-05 21:40:35.247 | INFO     | __main__:export_reviews_collection:367 -    Processed 4000/5000 reviews
+2026-01-05 21:40:35.306 | INFO     | __main__:export_reviews_collection:367 -    Processed 4500/5000 reviews
+2026-01-05 21:40:35.364 | INFO     | __main__:export_reviews_collection:367 -    Processed 5000/5000 reviews
+2026-01-05 21:40:35.365 | INFO     | __main__:export_reviews_collection:369 - ✅ Created 5000 reviews
+2026-01-05 21:40:35.526 | INFO     | __main__:save_collection:444 - ✅ Saved reviews.json (5000 documents)
+2026-01-05 21:40:35.527 | INFO     | __main__:export_price_history_collection:374 - 
+📈 Creating PriceHistory collection...
+2026-01-05 21:40:35.533 | INFO     | __main__:export_price_history_collection:402 - ✅ Created 250 price history entries
+2026-01-05 21:40:35.541 | INFO     | __main__:save_collection:444 - ✅ Saved price_history.json (250 documents)
+2026-01-05 21:40:35.542 | INFO     | __main__:export_search_history_collection:407 - 
+🔍 Creating SearchHistory collection...
+2026-01-05 21:40:35.542 | INFO     | __main__:export_search_history_collection:426 - ✅ Created 2 search history entries
+2026-01-05 21:40:35.544 | INFO     | __main__:save_collection:444 - ✅ Saved search_history.json (2 documents)
+2026-01-05 21:40:35.545 | INFO     | __main__:generate_import_script:448 - 
+📝 Generating import script...
+2026-01-05 21:40:35.547 | INFO     | __main__:generate_import_script:507 - ✅ Import scripts created
+2026-01-05 21:40:35.547 | INFO     | __main__:generate_import_script:508 -    Linux/Mac: data\final\mongodb\import.sh
+2026-01-05 21:40:35.548 | INFO     | __main__:generate_import_script:509 -    Windows: data\final\mongodb\import.bat
+2026-01-05 21:40:35.549 | INFO     | __main__:generate_report:513 - 
+📊 Generating export report...
+2026-01-05 21:40:35.551 | INFO     | __main__:generate_report:563 - ✅ Report saved: data\final\mongodb\export_report.txt
+2026-01-05 21:40:35.552 | INFO     | __main__:run:607 - 
+============================================================
+2026-01-05 21:40:35.553 | INFO     | __main__:run:608 - 🎉 SUCCESS! MongoDB export complete
+2026-01-05 21:40:35.554 | INFO     | __main__:run:609 - ============================================================

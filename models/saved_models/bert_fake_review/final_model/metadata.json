@@ -1,6 +1,0 @@
-{
-  "model_name": "distilbert-base-multilingual-cased",
-  "num_labels": 2,
-  "trained_at": "2026-01-04T04:48:34.425236",
-  "device": "cuda"
-}

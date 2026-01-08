@@ -1,0 +1,23 @@
+.vscode
+.idea
+__pycache__
+*.pyc
+.pytest_cache
+venv311
+.env
+# ===== ML models & checkpoints =====
+models/
+**/checkpoints/
+**/*.pt
+**/*.bin
+**/*.safetensors
+
+# HuggingFace / Transformers
+**/pytorch_model*
+**/optimizer.pt
+**/trainer_state.json
+
+# Python
+__pycache__/
+.env
+

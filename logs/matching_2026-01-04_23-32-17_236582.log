@@ -1,0 +1,65 @@
+2026-01-04 23:32:17.238 | INFO     | __main__:__init__:59 - 🚀 ProductMatchingPipeline initialized
+2026-01-04 23:32:17.239 | INFO     | __main__:run:363 - ============================================================
+2026-01-04 23:32:17.241 | INFO     | __main__:run:364 - 🚀 STARTING PRODUCT MATCHING
+2026-01-04 23:32:17.242 | INFO     | __main__:run:365 - ============================================================
+2026-01-04 23:32:17.243 | INFO     | __main__:run:368 - 
+📂 STEP 1: Loading products
+2026-01-04 23:32:17.265 | INFO     | __main__:load_products:71 - ✅ Loaded 1056 products
+2026-01-04 23:32:17.266 | INFO     | __main__:run:372 - 
+🌍 STEP 2: Splitting by country
+2026-01-04 23:32:17.275 | INFO     | __main__:split_by_country:83 - 🇹🇳 Tunisia products: 493
+2026-01-04 23:32:17.275 | INFO     | __main__:split_by_country:84 - 🇫🇷 France products: 563
+2026-01-04 23:32:17.276 | INFO     | __main__:run:376 - 
+🔗 STEP 3: Matching products
+2026-01-04 23:32:17.277 | INFO     | __main__:match_products:94 - 
+🔗 Starting product matching...
+2026-01-04 23:32:19.081 | INFO     | __main__:match_products:100 -    Processed 600/493 TN products
+2026-01-04 23:32:21.492 | INFO     | __main__:match_products:100 -    Processed 650/493 TN products
+2026-01-04 23:32:23.944 | INFO     | __main__:match_products:100 -    Processed 700/493 TN products
+2026-01-04 23:32:26.308 | INFO     | __main__:match_products:100 -    Processed 750/493 TN products
+2026-01-04 23:32:28.523 | INFO     | __main__:match_products:100 -    Processed 800/493 TN products
+2026-01-04 23:32:30.837 | INFO     | __main__:match_products:100 -    Processed 850/493 TN products
+2026-01-04 23:32:33.232 | INFO     | __main__:match_products:100 -    Processed 900/493 TN products
+2026-01-04 23:32:35.481 | INFO     | __main__:match_products:100 -    Processed 950/493 TN products
+2026-01-04 23:32:37.710 | INFO     | __main__:match_products:100 -    Processed 1000/493 TN products
+2026-01-04 23:32:39.949 | INFO     | __main__:match_products:100 -    Processed 1050/493 TN products
+2026-01-04 23:32:40.256 | INFO     | __main__:match_products:111 - ✅ Found 2 matches
+2026-01-04 23:32:40.257 | INFO     | __main__:run:384 - 
+💰 STEP 4: Calculating price differences
+2026-01-04 23:32:40.257 | INFO     | __main__:calculate_price_differences:118 - 
+💰 Calculating price differences...
+2026-01-04 23:32:41.318 | ERROR    | utils.currency_converter:get_rate:60 - ❌ Rate not found in API response
+2026-01-04 23:32:41.319 | WARNING  | utils.currency_converter:_get_fallback_rate:77 - ⚠️  Using fallback rate: 0.3
+2026-01-04 23:32:42.215 | ERROR    | utils.currency_converter:get_rate:60 - ❌ Rate not found in API response
+2026-01-04 23:32:42.216 | WARNING  | utils.currency_converter:_get_fallback_rate:77 - ⚠️  Using fallback rate: 0.3
+2026-01-04 23:32:43.093 | ERROR    | utils.currency_converter:get_rate:60 - ❌ Rate not found in API response
+2026-01-04 23:32:43.094 | WARNING  | utils.currency_converter:_get_fallback_rate:77 - ⚠️  Using fallback rate: 3.33
+2026-01-04 23:32:44.022 | ERROR    | utils.currency_converter:get_rate:60 - ❌ Rate not found in API response
+2026-01-04 23:32:44.022 | WARNING  | utils.currency_converter:_get_fallback_rate:77 - ⚠️  Using fallback rate: 0.3
+2026-01-04 23:32:44.918 | ERROR    | utils.currency_converter:get_rate:60 - ❌ Rate not found in API response
+2026-01-04 23:32:44.919 | WARNING  | utils.currency_converter:_get_fallback_rate:77 - ⚠️  Using fallback rate: 0.3
+2026-01-04 23:32:45.776 | ERROR    | utils.currency_converter:get_rate:60 - ❌ Rate not found in API response
+2026-01-04 23:32:45.777 | WARNING  | utils.currency_converter:_get_fallback_rate:77 - ⚠️  Using fallback rate: 3.33
+2026-01-04 23:32:45.778 | INFO     | __main__:calculate_price_differences:173 - ✅ Calculated prices for 2 matches
+2026-01-04 23:32:45.779 | INFO     | __main__:run:388 - 
+🎯 STEP 5: Categorizing matches
+2026-01-04 23:32:45.780 | INFO     | __main__:run:392 - 
+💾 STEP 6: Saving results
+2026-01-04 23:32:45.780 | INFO     | __main__:save_matches:190 - 
+💾 Saving matches...
+2026-01-04 23:32:45.792 | INFO     | __main__:save_matches:227 - ✅ Saved CSV: data\final\price_comparison.csv
+2026-01-04 23:32:45.794 | INFO     | __main__:save_matches:233 - ✅ Saved JSON: data\final\price_comparison.json
+2026-01-04 23:32:45.795 | INFO     | __main__:save_unmatched:240 - 
+📋 Saving unmatched products...
+2026-01-04 23:32:45.810 | INFO     | __main__:save_unmatched:246 - ✅ Saved 491 unmatched TN products
+2026-01-04 23:32:45.819 | INFO     | __main__:save_unmatched:252 - ✅ Saved 561 unmatched FR products
+2026-01-04 23:32:45.820 | INFO     | __main__:run:401 - 
+📊 STEP 8: Generating report
+2026-01-04 23:32:45.821 | INFO     | __main__:generate_report:256 - 
+📊 Generating matching report...
+2026-01-04 23:32:45.826 | INFO     | __main__:generate_report:353 - ✅ Report saved: data\final\matching_report.txt
+2026-01-04 23:32:45.828 | INFO     | __main__:generate_report:359 - ✅ Stats saved: data\final\matching_stats.json
+2026-01-04 23:32:45.828 | INFO     | __main__:run:404 - 
+============================================================
+2026-01-04 23:32:45.829 | INFO     | __main__:run:405 - 🎉 SUCCESS! Product matching complete
+2026-01-04 23:32:45.830 | INFO     | __main__:run:406 - ============================================================
