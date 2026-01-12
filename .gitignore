@@ -1,23 +1,101 @@
-.vscode
-.idea
-__pycache__
-*.pyc
-.pytest_cache
-venv311
-.env
-# ===== ML models & checkpoints =====
-models/
-**/checkpoints/
-**/*.pt
-**/*.bin
-**/*.safetensors
-
-# HuggingFace / Transformers
-**/pytorch_model*
-**/optimizer.pt
-**/trainer_state.json
-
-# Python
+# Byte-compiled / optimized / DLL files
 __pycache__/
-.env
+*.py[cod]
+*$py.class
 
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Environments
+.env
+.venv
+env/
+venv/
+venv311/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Data and Models
+# Track metadata but not large binaries
+data/raw/
+data/processed/
+models/**/*.pt
+models/**/*.bin
+models/**/*.safetensors
+models/**/pytorch_model*
+
+# Keep these files for reproducibility
+!models/**/*.json
+!models/**/*.txt
+!models/**/config.json
+!models/**/metadata.json
+!models/**/feature_names.txt
+!models/**/training_history.json
+!models/**/vocab.txt
+!models/**/tokenizer.json
+!models/**/tokenizer_config.json
+
+# MLflow and DVC
+.mlflow/
+mlruns/
+.dvc/
+
+# Logs and runtime files
+logs/
+*.log
+*.pid
+*.seed
+*.rdb
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# BIG Models
+
+models/saved_models/
+data

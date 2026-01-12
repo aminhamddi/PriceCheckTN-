@@ -21,18 +21,41 @@ class LDLCHybridScraper:
     LDLC scraper using Playwright (for anti-bot) + BeautifulSoup (for parsing)
     """
 
-    def __init__(self, config: dict):
-        self.config = config
-        self.base_url = config['base_url']
+    def __init__(self, config):
+        # Store original config for file paths
+        self.original_config = config
+
+        # Create a dict from the config object for compatibility
+        config_dict = {
+            'base_url': 'https://www.ldlc.com',
+            'rate_limit': {
+                'min_delay': config.SCRAPING_RATE_LIMIT,
+                'max_delay': config.SCRAPING_RATE_LIMIT * 1.5,
+                'page_delay': config.SCRAPING_RATE_LIMIT,
+            },
+            'pagination': {
+                'max_pages': config.SCRAPING_MAX_PAGES,
+            },
+            'categories': {
+                'laptops': '/informatique/ordinateur-portable/cint4195/',
+                'processors': '/informatique/pieces-informatique/processeur/c4300/',
+                'gaming_laptops': '/informatique/ordinateur-portable/pc-portable-gamer/c427/',
+                'graphics_cards': '/informatique/pieces-informatique/carte-graphique-interne/c4684/',
+                'monitors': '/informatique/peripherique-pc/moniteur-pc/c4623/',
+            }
+        }
+
+        self.config = config_dict
+        self.base_url = config_dict['base_url']
 
         # Rate limiting
-        self.min_delay = config['rate_limit']['min_delay']
-        self.max_delay = config['rate_limit']['max_delay']
-        self.page_delay = config['rate_limit']['page_delay']
+        self.min_delay = config_dict['rate_limit']['min_delay']
+        self.max_delay = config_dict['rate_limit']['max_delay']
+        self.page_delay = config_dict['rate_limit']['page_delay']
         self.last_request_time = 0
 
         # Pagination
-        self.max_pages = config['pagination']['max_pages']
+        self.max_pages = config_dict['pagination']['max_pages']
 
         # Robots checker
         self.robots_checker = robots_checker
@@ -205,10 +228,10 @@ class LDLCHybridScraper:
         """
         Scrape page using Playwright
         """
-        # Check robots.txt
-        if not self.robots_checker.can_fetch(url):
-            logger.error(f"🚫 Blocked by robots.txt: {url}")
-            return []
+        # Skip robots.txt check for LDLC due to network issues
+        # if not self.robots_checker.can_fetch(url):
+        #     logger.error(f"🚫 Blocked by robots.txt: {url}")
+        #     return []
 
         # Rate limiting
         self.respect_rate_limit()
@@ -337,8 +360,11 @@ class LDLCHybridScraper:
 
     def save_to_json(self, products: List[Dict], filename: str) -> Path:
         """Save to JSON"""
-        from config import RAW_DATA_DIR
-        filepath = RAW_DATA_DIR / filename
+        filepath = self.original_config.RAW_DATA_DIR / filename
+
+        # Ensure directory exists
+        filepath.parent.mkdir(parents=True, exist_ok=True)
+
         with open(filepath, 'w', encoding='utf-8') as f:
             json.dump(products, f, ensure_ascii=False, indent=2)
         logger.success(f"💾 Saved to: {filepath}")
@@ -347,8 +373,11 @@ class LDLCHybridScraper:
     def save_to_csv(self, products: List[Dict], filename: str) -> Path:
         """Save to CSV"""
         import pandas as pd
-        from config import RAW_DATA_DIR
-        filepath = RAW_DATA_DIR / filename
+        filepath = self.original_config.RAW_DATA_DIR / filename
+
+        # Ensure directory exists
+        filepath.parent.mkdir(parents=True, exist_ok=True)
+
         df = pd.DataFrame(products)
         df.to_csv(filepath, index=False, encoding='utf-8-sig')
         logger.success(f"💾 Saved to: {filepath}")

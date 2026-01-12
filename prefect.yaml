@@ -1,0 +1,13 @@
+# Prefect configuration for local development
+api:
+  url: http://127.0.0.1:4200/api
+
+# Deployment configuration
+deployments:
+  - name: pricechecktn-mlops-production
+    entrypoint: mlops/orchestration/pipeline.py:pricechecktn_mlops_pipeline
+    work_pool:
+      name: default-agent-pool
+    schedule:
+      cron: "0 0 * * *"
+      timezone: "Africa/Tunis"

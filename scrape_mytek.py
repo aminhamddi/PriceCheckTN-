@@ -1,13 +1,12 @@
-"""
-MyTek scraper - Using Playwright (necessary for JS-loaded content)
+"""\
+MyTek scraper - Using Playwright (necessary for JS-loaded content)\
 """
 
 from scrapers.tunisia.mytek_hybrid_scraper import MyTekHybridScraper
-from config import SCRAPING_CONFIG, LOGGING_CONFIG
+from config import config
 from loguru import logger
 from datetime import datetime
 import sys
-
 
 def setup_logging():
     logger.remove()
@@ -16,8 +15,9 @@ def setup_logging():
         format="<green>{time:HH:mm:ss}</green> | <level>{level:8}</level> | <level>{message}</level>",
         level="INFO"
     )
-    logger.add(LOGGING_CONFIG['file'], format=LOGGING_CONFIG['format'], level="DEBUG", rotation="10 MB")
-
+    logger.add(config.LOGS_DIR / "mytek_scraper.log",
+              format="<green>{time:HH:mm:ss}</green> | <level>{level:8}</level> | <level>{message}</level>",
+              level="DEBUG", rotation="10 MB")
 
 def main():
     setup_logging()
@@ -27,18 +27,20 @@ def main():
     logger.info(f"⏰ {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     logger.info("="*70)
 
-    config = SCRAPING_CONFIG['mytek']
+    # Create scraper with config
     scraper = MyTekHybridScraper(config)
 
-    # Start conservative
+    # Start conservative - updated categories based on current MyTek website
     categories_to_scrape = [
-        ('laptops', 10),
-        ('gaming_laptops', 10),
-        ('components', 10),
-        ('graphics_cards', 10),
-        ('processors', 10),
-        ('monitors', 10),
-
+        ('laptops', 2),  # /informatique/ordinateurs-portables.html
+        #('gaming_laptops', 10),  # /informatique/ordinateurs-portables/pc-gamer.html
+        #('desktops', 10),  # /informatique/ordinateur-de-bureau.html
+        #('gaming_desktops', 10),  # /informatique/ordinateur-de-bureau/ordinateur-gamer.html
+        #('components', 10),  # /informatique/composants-informatique.html
+        #('gaming_components', 10),  # /gaming/composant-pc-gamer.html
+        #('graphics_cards', 10),  # /informatique/composants-informatique/carte-graphique.html
+        #('processors', 10),  # /informatique/composants-informatique/processeur.html
+        ('monitors', 2),  # /informatique/ordinateur-de-bureau/ecran.html
     ]
 
     all_products = []
@@ -64,11 +66,25 @@ def main():
     else:
         logger.error("❌ No products scraped!")
 
-
 if __name__ == "__main__":
-    try:
-        main()
-    except KeyboardInterrupt:
-        logger.warning("\n⚠️  Interrupted")
-    except Exception as e:
-        logger.exception(f"❌ Error: {e}")
+    max_retries = 3
+    retry_count = 0
+
+    while retry_count <= max_retries:
+        try:
+            main()
+            break  # Success, exit loop
+        except KeyboardInterrupt:
+            logger.warning("\n⚠️  Interrupted by user")
+            break
+        except Exception as e:
+            retry_count += 1
+            if retry_count <= max_retries:
+                logger.warning(f"❌ Attempt {retry_count}/{max_retries} failed: {e}")
+                logger.info(f"🔄 Retrying in 5 seconds...")
+                import time
+                time.sleep(5)
+            else:
+                logger.error(f"❌ All {max_retries} attempts failed. Giving up.")
+                logger.exception("Final error details:")
+                sys.exit(1)

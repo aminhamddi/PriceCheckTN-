@@ -1,0 +1,66 @@
+name: PriceCheckTN CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    name: Run Tests
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install -r requirements-api.txt
+
+    - name: Run API tests
+      run: |
+        python api-tests.py
+
+    - name: Test package structure
+      run: |
+        python -c "from src.pricechecktn import __version__; print('Package structure OK')"
+
+  deploy:
+    name: Deploy to Production
+    needs: test
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install -r requirements-api.txt
+
+    - name: Deploy API
+      run: |
+        echo "Deploying API to production..."
+        # This would be replaced with actual deployment commands
+        echo "✅ API deployed successfully"
+
+    - name: Notify deployment
+      run: |
+        echo "🚀 Deployment completed successfully!"

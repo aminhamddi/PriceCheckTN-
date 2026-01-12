@@ -1,0 +1,90 @@
+# PriceCheckTN MLOps Pipeline
+# Data Version Control pipeline for reproducible workflows
+
+stages:
+  # Stage 1: Data Collection
+  scrape:
+    cmd: python scripts/scrape_all.py
+    deps:
+    - scripts/scrape_all.py
+    - config/base.py
+    outs:
+    - data/raw/
+
+  # Stage 2: Data Processing
+  process:
+    cmd: python scripts/1_consolidate_products.py
+    deps:
+    - data/raw/
+    - scripts/1_consolidate_products.py
+    - config/base.py
+    outs:
+    - data/final/products_unified.csv
+    - data/final/products_unified.json
+    - data/final/consolidation_report.txt
+    - data/final/consolidation_stats.json
+
+  # Stage 3: Product Matching
+  match:
+    cmd: python scripts/2_match_products_tn_fr.py
+    deps:
+    - data/final/products_unified.csv
+    - scripts/2_match_products_tn_fr.py
+    - config/base.py
+    outs:
+    - data/final/price_comparison.csv
+    - data/final/price_comparison.json
+    - data/final/unmatched_tn_products.csv
+    - data/final/unmatched_fr_products.csv
+
+  # Stage 4: Review Analysis
+  analyze_reviews:
+    cmd: python scripts/3_predict_reviews.py
+    deps:
+    - data/final/products_unified.csv
+    - scripts/3_predict_reviews.py
+    - models/fake_review_detector_xgboost.pkl
+    - config/base.py
+    outs:
+    - data/final/reviews_with_predictions.csv
+    - data/final/reviews_with_predictions.json
+    - data/final/fake_reviews_detected.csv
+
+  # Stage 5: Metadata Generation
+  generate_metadata:
+    cmd: python scripts/4_generate_metadata.py
+    deps:
+    - data/final/products_unified.csv
+    - data/final/price_comparison.csv
+    - data/final/reviews_with_predictions.csv
+    - scripts/4_generate_metadata.py
+    - config/base.py
+    outs:
+    - data/final/metadata/full_metadata.json
+    - data/final/metadata/full_report.txt
+
+  # Stage 6: BERT Model Training
+  train_bert:
+    cmd: python scripts/train_bert.py
+    deps:
+    - data/final/reviews_with_predictions.csv
+    - scripts/train_bert.py
+    - config/base.py
+    outs:
+    - models/saved_models/bert_fake_review/
+    metrics:
+    - models/training_metrics.json:
+        cache: false
+
+  # Stage 7: MongoDB Export
+  export_mongodb:
+    cmd: python scripts/5_export_for_mongodb.py
+    deps:
+    - data/final/products_unified.csv
+    - data/final/price_comparison.csv
+    - data/final/reviews_with_predictions.csv
+    - data/final/metadata/
+    - scripts/5_export_for_mongodb.py
+    - config/base.py
+    outs:
+    - data/final/mongodb/

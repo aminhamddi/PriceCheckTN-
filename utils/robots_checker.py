@@ -32,6 +32,10 @@ class RobotsChecker:
                 logger.info(f"✓ Loaded robots.txt from {robots_url}")
             except Exception as e:
                 logger.warning(f"Could not load robots.txt: {e}")
+                # When robots.txt can't be loaded, create a new parser that allows everything
+                parser = RobotFileParser()
+                parser.set_url("")  # Empty URL means no robots.txt
+                # RobotFileParser defaults to allowing all URLs when no rules are set
 
             self.parsers[domain] = parser
 

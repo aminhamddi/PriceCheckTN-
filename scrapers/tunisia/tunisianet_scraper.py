@@ -18,13 +18,39 @@ class TunisianetScraper(SimpleBaseScraper):
     Scraper for Tunisianet.com.tn with full pagination support
     """
 
-    def __init__(self, config: dict):
-        super().__init__(config)
+    def __init__(self, config):
+        # Store original config for file paths
+        self.original_config = config
+
+        # Create a dict from the config object for compatibility
+        config_dict = {
+            'base_url': 'https://www.tunisianet.com.tn',
+            'headers': {
+                'User-Agent': config.SCRAPING_USER_AGENT,
+                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+                'Accept-Language': 'fr-FR,fr;q=0.9,en;q=0.8',
+                'Accept-Encoding': 'gzip, deflate, br',
+                'Connection': 'keep-alive',
+            },
+            'rate_limit': {
+                'min_delay': config.SCRAPING_RATE_LIMIT,
+                'max_delay': config.SCRAPING_RATE_LIMIT * 1.5,
+            },
+            'categories': {
+                'laptops': '/702-ordinateur-portable',
+                'gaming_laptops': '/681-pc-portable-gamer',
+                'graphics_cards': '/410-carte-graphique-tunisie',
+                'processors': '/421-processeur',
+                'monitors': '/667-ecran-pc-tunisie'
+            }
+        }
+
+        super().__init__(config_dict)
         self.robots_checker = robots_checker
 
         # Pagination config
-        self.max_pages = config['pagination']['max_pages']
-        self.page_delay = config['rate_limit']['page_delay']
+        self.max_pages = config.SCRAPING_MAX_PAGES
+        self.page_delay = config.SCRAPING_RATE_LIMIT
 
     def _extract_specs(self, title: str) -> Dict[str, Optional[str]]:
         """Extract technical specifications from product title"""
@@ -301,9 +327,10 @@ class TunisianetScraper(SimpleBaseScraper):
 
     def save_to_json(self, products: List[Dict], filename: str) -> Path:
         """Save products to JSON file"""
-        from config import RAW_DATA_DIR
+        filepath = self.original_config.RAW_DATA_DIR / filename
 
-        filepath = RAW_DATA_DIR / filename
+        # Ensure directory exists
+        filepath.parent.mkdir(parents=True, exist_ok=True)
 
         with open(filepath, 'w', encoding='utf-8') as f:
             json.dump(products, f, ensure_ascii=False, indent=2)
@@ -314,9 +341,10 @@ class TunisianetScraper(SimpleBaseScraper):
     def save_to_csv(self, products: List[Dict], filename: str) -> Path:
         """Save products to CSV file"""
         import pandas as pd
-        from config import RAW_DATA_DIR
+        filepath = self.original_config.RAW_DATA_DIR / filename
 
-        filepath = RAW_DATA_DIR / filename
+        # Ensure directory exists
+        filepath.parent.mkdir(parents=True, exist_ok=True)
 
         df = pd.DataFrame(products)
         df.to_csv(filepath, index=False, encoding='utf-8-sig')

@@ -1,14 +1,13 @@
-"""
-Main script to scrape Tunisianet
-Run this file to start scraping
+"""\
+Main script to scrape Tunisianet\
+Run this file to start scraping\
 """
 
 from scrapers.tunisia.tunisianet_scraper import TunisianetScraper
-from config import SCRAPING_CONFIG, LOGGING_CONFIG
+from config import config
 from loguru import logger
 from datetime import datetime
 import sys
-
 
 def setup_logging():
     """Configure logging"""
@@ -18,17 +17,16 @@ def setup_logging():
     logger.add(
         sys.stdout,
         format="<green>{time:HH:mm:ss}</green> | <level>{level:8}</level> | <level>{message}</level>",
-        level=LOGGING_CONFIG['level']
+        level="INFO"
     )
 
     # File output
     logger.add(
-        LOGGING_CONFIG['file'],
-        format=LOGGING_CONFIG['format'],
+        config.LOGS_DIR / "tunisianet_scraper.log",
+        format="<green>{time:HH:mm:ss}</green> | <level>{level:8}</level> | <level>{message}</level>",
         level="DEBUG",
         rotation="10 MB"
     )
-
 
 def main():
     """Main scraping function"""
@@ -43,16 +41,15 @@ def main():
     logger.info("=" * 70)
 
     # Initialize scraper
-    config = SCRAPING_CONFIG['tunisianet']
     scraper = TunisianetScraper(config)
 
     # Choose what to scrape
     categories_to_scrape = [
-        ('laptops', 10),  # Category key, max pages
-        ('gaming_laptops', 10),
-        ('graphics_cards', 10),
-        ('processors', 10),
-        ('monitors', 10)
+        ('laptops', 2),  # Category key, max pages
+        #('gaming_laptops', 10),
+        #('graphics_cards', 10),
+        #('processors', 10),
+        ('monitors', 2)
     ]
 
     all_products = []
@@ -101,11 +98,25 @@ def main():
     logger.info(f"\n⏰ Finished at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     logger.info("=" * 70)
 
-
 if __name__ == "__main__":
-    try:
-        main()
-    except KeyboardInterrupt:
-        logger.warning("\n⚠️  Scraping interrupted by user")
-    except Exception as e:
-        logger.exception(f"❌ Fatal error: {e}")
+    max_retries = 3
+    retry_count = 0
+
+    while retry_count <= max_retries:
+        try:
+            main()
+            break  # Success, exit loop
+        except KeyboardInterrupt:
+            logger.warning("\n⚠️  Interrupted by user")
+            break
+        except Exception as e:
+            retry_count += 1
+            if retry_count <= max_retries:
+                logger.warning(f"❌ Attempt {retry_count}/{max_retries} failed: {e}")
+                logger.info(f"🔄 Retrying in 5 seconds...")
+                import time
+                time.sleep(5)
+            else:
+                logger.error(f"❌ All {max_retries} attempts failed. Giving up.")
+                logger.exception("Final error details:")
+                sys.exit(1)

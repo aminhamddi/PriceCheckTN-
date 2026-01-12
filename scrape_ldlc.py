@@ -1,13 +1,12 @@
-"""
-LDLC scraper - Playwright version (anti-bot bypass)
+"""\
+LDLC scraper - Playwright version (anti-bot bypass)\
 """
 
 from scrapers.france.ldlc_hybrid_scraper import LDLCHybridScraper
-from config import SCRAPING_CONFIG, LOGGING_CONFIG
+from config import config
 from loguru import logger
 from datetime import datetime
 import sys
-
 
 def setup_logging():
     logger.remove()
@@ -16,8 +15,9 @@ def setup_logging():
         format="<green>{time:HH:mm:ss}</green> | <level>{level:8}</level> | <level>{message}</level>",
         level="INFO"
     )
-    logger.add(LOGGING_CONFIG['file'], format=LOGGING_CONFIG['format'], level="DEBUG", rotation="10 MB")
-
+    logger.add(config.LOGS_DIR / "ldlc_scraper.log",
+              format="<green>{time:HH:mm:ss}</green> | <level>{level:8}</level> | <level>{message}</level>",
+              level="DEBUG", rotation="10 MB")
 
 def main():
     setup_logging()
@@ -35,14 +35,14 @@ def main():
     logger.info(f"⏰ {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     logger.info("=" * 70)
 
-    config = SCRAPING_CONFIG['ldlc']
+    # Initialize scraper
     scraper = LDLCHybridScraper(config)
 
     categories_to_scrape = [
-        ('laptops', 10),  # Start with 2 pages
-        ('processors', 10),
-        ('gaming_laptops', 10),
-        ('graphics_cards', 10),
+        ('laptops', 2),  # Start with 2 pages
+        ('processors', 2),
+        ('gaming_laptops', 2),
+        ('graphics_cards', 2),
 
     ]
 
@@ -69,11 +69,25 @@ def main():
     else:
         logger.error("❌ No products scraped!")
 
-
 if __name__ == "__main__":
-    try:
-        main()
-    except KeyboardInterrupt:
-        logger.warning("\n⚠️  Interrupted")
-    except Exception as e:
-        logger.exception(f"❌ Error: {e}")
+    max_retries = 3
+    retry_count = 0
+
+    while retry_count <= max_retries:
+        try:
+            main()
+            break  # Success, exit loop
+        except KeyboardInterrupt:
+            logger.warning("\n⚠️  Interrupted by user")
+            break
+        except Exception as e:
+            retry_count += 1
+            if retry_count <= max_retries:
+                logger.warning(f"❌ Attempt {retry_count}/{max_retries} failed: {e}")
+                logger.info(f"🔄 Retrying in 5 seconds...")
+                import time
+                time.sleep(5)
+            else:
+                logger.error(f"❌ All {max_retries} attempts failed. Giving up.")
+                logger.exception("Final error details:")
+                sys.exit(1)

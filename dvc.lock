@@ -1,0 +1,52 @@
+schema: '2.0'
+stages:
+  scrape:
+    cmd: python scripts/scrape_all.py
+    deps:
+    - path: config/base.py
+      hash: md5
+      md5: 06226b30630626268776c73ab1630234
+      size: 3421
+    - path: scripts/scrape_all.py
+      hash: md5
+      md5: ee0ce0ca893612921610b0b5043ce49f
+      size: 1925
+    outs:
+    - path: data/raw/
+      hash: md5
+      md5: 17d3f403715321851d08e15dd34031c8.dir
+      size: 628190
+      nfiles: 12
+  process:
+    cmd: python scripts/1_consolidate_products.py
+    deps:
+    - path: config/base.py
+      hash: md5
+      md5: 06226b30630626268776c73ab1630234
+      size: 3421
+    - path: data/raw/
+      hash: md5
+      md5: 17d3f403715321851d08e15dd34031c8.dir
+      size: 628190
+      nfiles: 12
+    - path: scripts/1_consolidate_products.py
+      hash: md5
+      md5: 81031cd38bd80b77a988f0c098839427
+      size: 20405
+    outs:
+    - path: data/final/consolidation_report.txt
+      hash: md5
+      md5: 1d7c58a7ebee0826b08f62526ccf09f2
+      size: 2015
+    - path: data/final/consolidation_stats.json
+      hash: md5
+      md5: 255d925b66b4009fb3b784475ded6cfb
+      size: 685
+    - path: data/final/products_unified.csv
+      hash: md5
+      md5: 423ed6190755ccd011fd411e62b63cd7
+      size: 133592
+    - path: data/final/products_unified.json
+      hash: md5
+      md5: 71a295c80574916cef861aaf2b57cacc
+      size: 273092
