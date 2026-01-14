@@ -3,7 +3,7 @@ Main script to scrape Tunisianet\
 Run this file to start scraping\
 """
 
-from scrapers.tunisia.tunisianet_scraper import TunisianetScraper
+from scraping.tunisia.tunisianet_scraper import TunisianetScraper
 from config import config
 from loguru import logger
 from datetime import datetime
@@ -35,9 +35,9 @@ def main():
     setup_logging()
 
     logger.info("=" * 70)
-    print("🚀 TUNISIANET SCRAPER - Starting")
-    logger.info("🚀 TUNISIANET SCRAPER - Starting")
-    logger.info(f"⏰ Started at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    print(" TUNISIANET SCRAPER - Starting")
+    logger.info(" TUNISIANET SCRAPER - Starting")
+    logger.info(f" Started at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     logger.info("=" * 70)
 
     # Initialize scraper
@@ -63,7 +63,7 @@ def main():
         products = scraper.scrape_category(category_key, max_pages=max_pages)
         all_products.extend(products)
 
-        logger.info(f"✅ Category '{category_key}' complete: {len(products)} products\n")
+        logger.info(f" Category '{category_key}' complete: {len(products)} products\n")
 
     # Save results
     if all_products:
@@ -89,13 +89,13 @@ def main():
         # Print summary
         scraper.print_summary(all_products)
 
-        logger.success(f"\n✅ SCRAPING COMPLETE!")
-        logger.success(f"📊 Total products scraped: {len(all_products)}")
-        logger.success(f"💾 Saved to: {json_file.parent}")
+        logger.success(f"\n SCRAPING COMPLETE!")
+        logger.success(f" Total products scraped: {len(all_products)}")
+        logger.success(f" Saved to: {json_file.parent}")
     else:
-        logger.error("❌ No products scraped!")
+        logger.error(" No products scraped!")
 
-    logger.info(f"\n⏰ Finished at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    logger.info(f"\n Finished at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     logger.info("=" * 70)
 
 if __name__ == "__main__":
@@ -107,16 +107,16 @@ if __name__ == "__main__":
             main()
             break  # Success, exit loop
         except KeyboardInterrupt:
-            logger.warning("\n⚠️  Interrupted by user")
+            logger.warning("\n  Interrupted by user")
             break
         except Exception as e:
             retry_count += 1
             if retry_count <= max_retries:
-                logger.warning(f"❌ Attempt {retry_count}/{max_retries} failed: {e}")
-                logger.info(f"🔄 Retrying in 5 seconds...")
+                logger.warning(f"Attempt {retry_count}/{max_retries} failed: {e}")
+                logger.info(f" Retrying in 5 seconds...")
                 import time
                 time.sleep(5)
             else:
-                logger.error(f"❌ All {max_retries} attempts failed. Giving up.")
+                logger.error(f" All {max_retries} attempts failed. Giving up.")
                 logger.exception("Final error details:")
                 sys.exit(1)

@@ -9,7 +9,7 @@ import pandas as pd
 
 def main():
     """Main dashboard function"""
-    st.title("🚀 PriceCheckTN MLOps Pipeline Dashboard")
+    st.title(" PriceCheckTN MLOps Pipeline Dashboard")
     st.markdown("Monitor Prefect pipeline runs and status")
 
     # Connect to Prefect API
@@ -55,7 +55,7 @@ def main():
         df = pd.DataFrame(runs_data)
 
         # Display metrics
-        st.subheader("📊 Pipeline Metrics")
+        st.subheader(" Pipeline Metrics")
         col1, col2, col3, col4 = st.columns(4)
         with col1:
             st.metric("Total Runs", len(df))
@@ -70,19 +70,19 @@ def main():
             st.metric("Success Rate", f"{success_rate:.1f}%")
 
         # Display runs table
-        st.subheader("📋 Recent Pipeline Runs")
+        st.subheader(" Recent Pipeline Runs")
         st.dataframe(
             df[['run_id', 'name', 'state', 'start_time', 'end_time', 'duration']],
             use_container_width=True
         )
 
         # State distribution chart
-        st.subheader("📈 Run Status Distribution")
+        st.subheader(" Run Status Distribution")
         state_counts = df['state'].value_counts()
         st.bar_chart(state_counts)
 
     except Exception as e:
-        st.error(f"❌ Failed to fetch pipeline runs: {e}")
+        st.error(f" Failed to fetch pipeline runs: {e}")
 
 if __name__ == "__main__":
     main()

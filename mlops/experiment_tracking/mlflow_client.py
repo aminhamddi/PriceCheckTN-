@@ -7,7 +7,7 @@ import mlflow
 import os
 from datetime import datetime
 from typing import Dict, Any, Optional
-from config.base import config
+from config.base import get_config
 
 class MLflowClient:
     """MLflow experiment tracking client with proper configuration"""
@@ -18,8 +18,12 @@ class MLflowClient:
         Args:
             experiment_name: Name of the experiment. If None, uses default from config.
         """
-        self.experiment_name = experiment_name or config.MLFLOW_EXPERIMENT_NAME
-        self.tracking_uri = config.MLFLOW_TRACKING_URI
+        # Get config dynamically to avoid circular imports
+        from config.base import get_config
+        cfg = get_config()
+        
+        self.experiment_name = experiment_name or cfg.MLFLOW_EXPERIMENT_NAME
+        self.tracking_uri = cfg.MLFLOW_TRACKING_URI
 
         # Set MLflow tracking URI
         mlflow.set_tracking_uri(self.tracking_uri)

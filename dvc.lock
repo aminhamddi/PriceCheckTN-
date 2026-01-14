@@ -1,22 +1,34 @@
 schema: '2.0'
 stages:
   scrape:
-    cmd: python scripts/scrape_all.py
+    cmd: python scripts/run_scraping.py
     deps:
     - path: config/base.py
       hash: md5
-      md5: 06226b30630626268776c73ab1630234
-      size: 3421
-    - path: scripts/scrape_all.py
+      md5: 92956a09e34071f64d40fae30904a4e6
+      size: 3710
+    - path: scraping/
       hash: md5
-      md5: ee0ce0ca893612921610b0b5043ce49f
-      size: 1925
-    outs:
-    - path: data/raw/
-      hash: md5
-      md5: 17d3f403715321851d08e15dd34031c8.dir
-      size: 628190
+      md5: c0b33791a75d8bd6a5e9ce8ea64d867a.dir
+      size: 159680
       nfiles: 12
+    - path: scripts/run_scraping.py
+      hash: md5
+      md5: e05ccf99bb374bbd05d822a3119e874e
+      size: 2108
+    outs:
+    - path: data/raw/ldlc_latest.csv
+      hash: md5
+      md5: 7f083a92db4382da82a2c918441edf29
+      size: 47906
+    - path: data/raw/mytek_latest.csv
+      hash: md5
+      md5: 4daf870f2d240d5a989edcf899b67fa2
+      size: 118551
+    - path: data/raw/tunisianet_latest.csv
+      hash: md5
+      md5: 0e8d8cc690979d5fc371537dac7cbd98
+      size: 28110
   process:
     cmd: python scripts/1_consolidate_products.py
     deps:
@@ -50,3 +62,140 @@ stages:
       hash: md5
       md5: 71a295c80574916cef861aaf2b57cacc
       size: 273092
+  consolidate:
+    cmd: python scripts/consolidate.py
+    deps:
+    - path: config/base.py
+      hash: md5
+      md5: 92956a09e34071f64d40fae30904a4e6
+      size: 3710
+    - path: data/raw/ldlc_latest.csv
+      hash: md5
+      md5: 7f083a92db4382da82a2c918441edf29
+      size: 47906
+    - path: data/raw/mytek_latest.csv
+      hash: md5
+      md5: 4daf870f2d240d5a989edcf899b67fa2
+      size: 118551
+    - path: data/raw/tunisianet_latest.csv
+      hash: md5
+      md5: 0e8d8cc690979d5fc371537dac7cbd98
+      size: 28110
+    - path: scripts/consolidate.py
+      hash: md5
+      md5: 23ebf55f6478fea2450ed9945878253b
+      size: 20409
+    outs:
+    - path: data/final/consolidation_report.txt
+      hash: md5
+      md5: 4b0cbddc1f8753f152997d68e73dac91
+      size: 2021
+    - path: data/final/consolidation_stats.json
+      hash: md5
+      md5: 50288e2f26fb9e8be38a26fc75defe85
+      size: 709
+    - path: data/final/products_unified.csv
+      hash: md5
+      md5: fa9520945d419ca066b16ba38d91a4f9
+      size: 184492
+    - path: data/final/products_unified.json
+      hash: md5
+      md5: 41eee1e98672b0eb15975d929292a42d
+      size: 384058
+  match:
+    cmd: python scripts/match_products.py
+    deps:
+    - path: config/base.py
+      hash: md5
+      md5: 92956a09e34071f64d40fae30904a4e6
+      size: 3710
+    - path: data/final/products_unified.csv
+      hash: md5
+      md5: fa9520945d419ca066b16ba38d91a4f9
+      size: 184492
+    - path: scripts/match_products.py
+      hash: md5
+      md5: 95042dea3a3112640d23d90cfe67dc40
+      size: 16998
+    outs:
+    - path: data/final/price_comparison.csv
+      hash: md5
+      md5: 81051bcc2cf1bedf378224b0a93e2877
+      size: 2
+    - path: data/final/price_comparison.json
+      hash: md5
+      md5: d751713988987e9331980363e24189ce
+      size: 2
+    - path: data/final/unmatched_fr_products.csv
+      hash: md5
+      md5: 6cb9c41451893d2e5d0ab3d38ba09f70
+      size: 66017
+    - path: data/final/unmatched_tn_products.csv
+      hash: md5
+      md5: a02246f9577df6445fe2101b47540add
+      size: 118744
+  analyze_reviews:
+    cmd: python nlp/prediction.py
+    deps:
+    - path: config/base.py
+      hash: md5
+      md5: 92956a09e34071f64d40fae30904a4e6
+      size: 3710
+    - path: data/final/products_unified.csv
+      hash: md5
+      md5: fa9520945d419ca066b16ba38d91a4f9
+      size: 184492
+    - path: models/fake_review_detector_xgboost.pkl
+      hash: md5
+      md5: 030afb62d1a2875ab79ae2e9354fc181
+      size: 274939
+    - path: nlp/
+      hash: md5
+      md5: 14fd1c444e33a387ba98d677200f2ca2.dir
+      size: 30972
+      nfiles: 4
+    - path: nlp/prediction.py
+      hash: md5
+      md5: 79469483c89615e919b5f1360911d099
+      size: 17739
+    outs:
+    - path: data/final/fake_reviews_detected.csv
+      hash: md5
+      md5: 624082b93f6c64fa8cbe1e556608ee76
+      size: 347
+    - path: data/final/reviews_with_predictions.csv
+      hash: md5
+      md5: c15cf28e571a2896694d77a5d9b12ae3
+      size: 4517452
+    - path: data/final/reviews_with_predictions.json
+      hash: md5
+      md5: 23450b46e4683402076b4712334ca0cd
+      size: 7099231
+  generate_metadata:
+    cmd: python scripts/generate_metadata.py
+    deps:
+    - path: config/base.py
+      hash: md5
+      md5: 92956a09e34071f64d40fae30904a4e6
+      size: 3710
+    - path: data/final/products_unified.csv
+      hash: md5
+      md5: fa9520945d419ca066b16ba38d91a4f9
+      size: 184492
+    - path: data/final/reviews_with_predictions.csv
+      hash: md5
+      md5: c15cf28e571a2896694d77a5d9b12ae3
+      size: 4517452
+    - path: scripts/generate_metadata.py
+      hash: md5
+      md5: 7a608206380ba0a3404b2ad76e08f9f6
+      size: 22038
+    outs:
+    - path: data/final/metadata/full_metadata.json
+      hash: md5
+      md5: dea292a2553cf26872437e588b87af9a
+      size: 2656
+    - path: data/final/metadata/full_report.txt
+      hash: md5
+      md5: d87d71532a61cb788b7dc41478462056
+      size: 1535

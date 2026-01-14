@@ -12,7 +12,7 @@ import os
 def run_dvc_pipeline():
     """Run the complete DVC pipeline"""
     logger = get_run_logger()
-    logger.info("🚀 Starting DVC pipeline...")
+    logger.info(" Starting DVC pipeline...")
 
     try:
         result = subprocess.run([
@@ -20,25 +20,25 @@ def run_dvc_pipeline():
         ], capture_output=True, text=True, cwd=".")
 
         if result.returncode != 0:
-            logger.error(f"❌ DVC pipeline failed: {result.stderr}")
+            logger.error(f" DVC pipeline failed: {result.stderr}")
             raise Exception(f"DVC pipeline failed: {result.stderr}")
 
-        logger.info("✅ DVC pipeline completed successfully")
+        logger.info(" DVC pipeline completed successfully")
         return True
 
     except Exception as e:
-        logger.error(f"❌ DVC pipeline error: {e}")
+        logger.error(f" DVC pipeline error: {e}")
         raise
 
 @task(name="Train BERT Model", retries=1)
 def train_bert_model():
     """Train BERT model with MLflow integration"""
     logger = get_run_logger()
-    logger.info("🤖 Starting BERT training...")
+    logger.info(" Starting BERT training...")
 
     try:
         result = subprocess.run([
-            sys.executable, "scripts/train_bert.py",
+            sys.executable, "mlops/training/bert_training.py",
             "--epochs", "3",
             "--batch-size", "16"
         ], capture_output=True, text=True, cwd=".")
@@ -47,35 +47,35 @@ def train_bert_model():
             logger.error(f"❌ BERT training failed: {result.stderr}")
             raise Exception(f"BERT training failed: {result.stderr}")
 
-        logger.info("✅ BERT training completed successfully")
+        logger.info(" BERT training completed successfully")
         return True
 
     except Exception as e:
-        logger.error(f"❌ BERT training error: {e}")
+        logger.error(f" BERT training error: {e}")
         raise
 
 @task(name="Update Model Registry", retries=1)
 def update_model_registry():
     """Promote model to production if tests pass"""
     logger = get_run_logger()
-    logger.info("📋 Updating model registry...")
+    logger.info(" Updating model registry...")
 
     try:
         # Check if we should promote (simplified for demo)
         result = subprocess.run([
-            sys.executable, "scripts/model_registry_cli.py",
+            sys.executable, "mlops/model_registry/cli.py",
             "promote", "bert_fake_review_detector"
         ], capture_output=True, text=True, cwd=".")
 
         if result.returncode != 0:
-            logger.warning(f"⚠️  Model promotion failed: {result.stderr}")
+            logger.warning(f"  Model promotion failed: {result.stderr}")
             return False
 
-        logger.info("✅ Model promoted to production")
+        logger.info(" Model promoted to production")
         return True
 
     except Exception as e:
-        logger.error(f"❌ Model registry error: {e}")
+        logger.error(f" Model registry error: {e}")
         return False
 
 @task(name="Notify Completion", retries=1)
@@ -83,9 +83,9 @@ def notify_completion(success: bool):
     """Notify about pipeline completion"""
     logger = get_run_logger()
     if success:
-        logger.info("🎉 Pipeline completed successfully!")
+        logger.info(" Pipeline completed successfully!")
     else:
-        logger.error("❌ Pipeline completed with errors")
+        logger.error(" Pipeline completed with errors")
 
 @flow(
     name="PriceCheckTN MLOps Pipeline",
@@ -96,7 +96,7 @@ def notify_completion(success: bool):
 def pricechecktn_mlops_pipeline():
     """Main MLOps pipeline flow"""
     logger = get_run_logger()
-    logger.info("🚀 Starting PriceCheckTN MLOps Pipeline")
+    logger.info(" Starting PriceCheckTN MLOps Pipeline")
 
     # Run complete workflow
     dvc_success = run_dvc_pipeline()

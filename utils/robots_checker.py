@@ -29,7 +29,7 @@ class RobotsChecker:
 
             try:
                 parser.read()
-                logger.info(f"✓ Loaded robots.txt from {robots_url}")
+                logger.info(f" Loaded robots.txt from {robots_url}")
             except Exception as e:
                 logger.warning(f"Could not load robots.txt: {e}")
                 # When robots.txt can't be loaded, create a new parser that allows everything
@@ -48,7 +48,7 @@ class RobotsChecker:
             allowed = parser.can_fetch(user_agent, url)
 
             if not allowed:
-                logger.warning(f"🚫 robots.txt blocks: {url}")
+                logger.warning(f" robots.txt blocks: {url}")
 
             return allowed
 

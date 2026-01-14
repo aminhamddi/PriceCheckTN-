@@ -13,16 +13,16 @@ def deploy_pipeline():
     try:
         result = subprocess.run(["python", "-m", "prefect", "--version"], capture_output=True, text=True)
         if result.returncode != 0:
-            print("❌ Prefect CLI not found. Please ensure Prefect is installed.")
+            print(" Prefect CLI not found. Please ensure Prefect is installed.")
             return False
-        print(f"🎉 Prefect CLI found: {result.stdout.strip()}")
+        print(f" Prefect CLI found: {result.stdout.strip()}")
     except FileNotFoundError:
-        print("❌ Prefect CLI not found. Please ensure Prefect is installed.")
+        print(" Prefect CLI not found. Please ensure Prefect is installed.")
         return False
 
     # Deploy using prefect CLI
     try:
-        print("🚀 Deploying Prefect pipeline...")
+        print(" Deploying Prefect pipeline...")
 
         # Build deployment using prefect CLI
         deploy_cmd = [
@@ -41,16 +41,16 @@ def deploy_pipeline():
         result = subprocess.run(deploy_cmd, capture_output=True, text=True)
 
         if result.returncode == 0:
-            print("✅ Deployment created successfully!")
-            print(f"📊 Output: {result.stdout}")
+            print(" Deployment created successfully!")
+            print(f" Output: {result.stdout}")
             return True
         else:
-            print("❌ Deployment failed:")
-            print(f"🔴 Error: {result.stderr}")
+            print(" Deployment failed:")
+            print(f" Error: {result.stderr}")
             return False
 
     except Exception as e:
-        print(f"❌ Unexpected error during deployment: {e}")
+        print(f" Unexpected error during deployment: {e}")
         return False
 
 if __name__ == "__main__":

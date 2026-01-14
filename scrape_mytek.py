@@ -2,7 +2,7 @@
 MyTek scraper - Using Playwright (necessary for JS-loaded content)\
 """
 
-from scrapers.tunisia.mytek_hybrid_scraper import MyTekHybridScraper
+from scraping.tunisia.mytek_scraper import MyTekHybridScraper
 from config import config
 from loguru import logger
 from datetime import datetime
@@ -23,8 +23,8 @@ def main():
     setup_logging()
 
     logger.info("="*70)
-    logger.info("🚀 MYTEK SCRAPER STARTING")
-    logger.info(f"⏰ {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    logger.info(" MYTEK SCRAPER STARTING")
+    logger.info(f" {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     logger.info("="*70)
 
     # Create scraper with config
@@ -53,7 +53,7 @@ def main():
         products = scraper.scrape_category(category_key, max_pages=max_pages)
         all_products.extend(products)
 
-        logger.info(f"✅ Complete: {len(products)} products\n")
+        logger.info(f" Complete: {len(products)} products\n")
 
     if all_products:
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -62,9 +62,9 @@ def main():
         scraper.save_to_json(all_products, "mytek_latest.json")
         scraper.save_to_csv(all_products, "mytek_latest.csv")
 
-        logger.success(f"\n✅ SUCCESS! {len(all_products)} products")
+        logger.success(f"\n SUCCESS! {len(all_products)} products")
     else:
-        logger.error("❌ No products scraped!")
+        logger.error(" No products scraped!")
 
 if __name__ == "__main__":
     max_retries = 3
@@ -75,16 +75,16 @@ if __name__ == "__main__":
             main()
             break  # Success, exit loop
         except KeyboardInterrupt:
-            logger.warning("\n⚠️  Interrupted by user")
+            logger.warning("\n  Interrupted by user")
             break
         except Exception as e:
             retry_count += 1
             if retry_count <= max_retries:
-                logger.warning(f"❌ Attempt {retry_count}/{max_retries} failed: {e}")
-                logger.info(f"🔄 Retrying in 5 seconds...")
+                logger.warning(f" Attempt {retry_count}/{max_retries} failed: {e}")
+                logger.info(f" Retrying in 5 seconds...")
                 import time
                 time.sleep(5)
             else:
-                logger.error(f"❌ All {max_retries} attempts failed. Giving up.")
+                logger.error(f" All {max_retries} attempts failed. Giving up.")
                 logger.exception("Final error details:")
                 sys.exit(1)

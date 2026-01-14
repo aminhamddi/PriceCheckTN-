@@ -6,7 +6,10 @@ Contains default settings and environment variables.
 import os
 from pathlib import Path
 from typing import Dict, Any
-from pydantic_settings import BaseSettings
+try:
+    from pydantic_settings import BaseSettings
+except ImportError:
+    from pydantic import BaseSettings
 from pydantic import Field, ConfigDict
 
 class BaseConfig(BaseSettings):
@@ -45,7 +48,7 @@ class BaseConfig(BaseSettings):
     # API settings (from .env file)
     APP_NAME: str = "PriceCheckTN API"
     VERSION: str = "2.0.0"
-    DEBUG: bool = True
+    DEBUG: bool = False
     HOST: str = "0.0.0.0"
     PORT: int = 8000
     CORS_ORIGINS: str = "http://localhost:3000,http://localhost:5173"
@@ -54,8 +57,11 @@ class BaseConfig(BaseSettings):
     # Additional API settings
     API_HOST: str = "0.0.0.0"
     API_PORT: int = 8000
-    API_DEBUG: bool = True
+    API_DEBUG: bool = False
     API_RELOAD: bool = True
+
+    # Logging settings
+    LOG_LEVEL: str = "INFO"
 
     # Scraping settings
     SCRAPING_RATE_LIMIT: float = 2.0
@@ -87,12 +93,17 @@ def get_config() -> BaseConfig:
     """Get the current configuration"""
     return BaseConfig()
 
-# Initialize configuration
-config = get_config()
+# Initialize configuration (lazy loading to avoid import issues)
+# Use get_config() to avoid circular imports and config cache issues
+config = None
 
 # Create directories if they don't exist
 def initialize_directories():
     """Create necessary directories"""
+    # Only initialize if config is available
+    if config is None:
+        return
+    
     directories = [
         config.DATA_DIR,
         config.RAW_DATA_DIR,
@@ -105,5 +116,4 @@ def initialize_directories():
     for directory in directories:
         directory.mkdir(parents=True, exist_ok=True)
 
-# Initialize directories on import
-initialize_directories()# Initialize directories on import
+# Don't initialize on import to avoid circular dependency issues

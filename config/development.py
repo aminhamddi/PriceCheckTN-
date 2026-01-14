@@ -4,7 +4,10 @@ Extends base configuration with development-specific settings.
 """
 
 from .base import BaseConfig
-from pydantic_settings import BaseSettings
+try:
+    from pydantic_settings import BaseSettings
+except ImportError:
+    from pydantic import BaseSettings
 
 class DevelopmentConfig(BaseConfig):
     """Development environment configuration"""
@@ -36,5 +39,5 @@ def get_development_config() -> DevelopmentConfig:
     """Get development configuration"""
     return DevelopmentConfig()
 
-# Initialize development configuration
-dev_config = get_development_config()
+# Initialize development configuration (lazy loading)
+dev_config = None

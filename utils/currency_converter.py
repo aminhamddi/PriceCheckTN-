@@ -63,27 +63,27 @@ class CurrencyConverter:
                             'timestamp': datetime.now()
                         }
 
-                        logger.info(f"✅ API rate {from_currency}→{to_currency}: {rate:.4f}")
+                        logger.info(f" API rate {from_currency}→{to_currency}: {rate:.4f}")
                         return rate
 
             except Exception as e:
-                logger.warning(f"⚠️ API failed: {e}")
+                logger.warning(f" API failed: {e}")
 
         # Use manual fallback rates
         if cache_key in self.manual_rates:
             rate = self.manual_rates[cache_key]
-            logger.info(f"💡 Using manual rate {from_currency}→{to_currency}: {rate:.4f}")
+            logger.info(f" Using manual rate {from_currency}→{to_currency}: {rate:.4f}")
             return rate
 
         # Last resort: calculate inverse
         inverse_key = f"{to_currency}_{from_currency}"
         if inverse_key in self.manual_rates:
             rate = 1.0 / self.manual_rates[inverse_key]
-            logger.info(f"💡 Using inverse rate {from_currency}→{to_currency}: {rate:.4f}")
+            logger.info(f" Using inverse rate {from_currency}→{to_currency}: {rate:.4f}")
             return rate
 
         # Absolute fallback
-        logger.error(f"❌ No rate found for {cache_key}, using 1.0")
+        logger.error(f" No rate found for {cache_key}, using 1.0")
         return 1.0
 
     def convert(self, amount: float, from_currency: str, to_currency: str) -> float:

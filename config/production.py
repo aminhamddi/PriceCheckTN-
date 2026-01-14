@@ -40,5 +40,5 @@ def get_production_config() -> ProductionConfig:
     """Get production configuration"""
     return ProductionConfig()
 
-# Initialize production configuration
-prod_config = get_production_config()
+# Initialize production configuration (lazy loading)
+prod_config = None

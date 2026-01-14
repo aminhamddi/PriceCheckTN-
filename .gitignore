@@ -63,16 +63,6 @@ models/**/*.bin
 models/**/*.safetensors
 models/**/pytorch_model*
 
-# Keep these files for reproducibility
-!models/**/*.json
-!models/**/*.txt
-!models/**/config.json
-!models/**/metadata.json
-!models/**/feature_names.txt
-!models/**/training_history.json
-!models/**/vocab.txt
-!models/**/tokenizer.json
-!models/**/tokenizer_config.json
 
 # MLflow and DVC
 .mlflow/
@@ -99,3 +89,16 @@ Thumbs.db
 
 models/saved_models/
 data
+
+# Project-specific exclusions for icon cleaning
+# Backup files created during cleaning
+*.backup
+*.cleaned
+
+# Temporary files
+*.tmp
+*.temp
+
+# Generated reports
+*_report.txt
+*_summary.txt

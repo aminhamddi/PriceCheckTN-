@@ -1,5 +1,9 @@
 """
 Pydantic Models for Request/Response validation
+
+This module was renamed from `api/models.py` to avoid a naming
+collision with the `api/models/` package which contains submodules
+like `bert_predictor.py`.
 """
 
 from pydantic import BaseModel, Field, validator

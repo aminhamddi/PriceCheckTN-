@@ -26,10 +26,10 @@ def check_package_structure():
             missing_files.append(file_path)
 
     if missing_files:
-        print(f"❌ Missing files: {missing_files}")
+        print(f" Missing files: {missing_files}")
         return False
 
-    print("✅ Package structure OK")
+    print(" Package structure OK")
     return True
 
 def check_requirements():
@@ -42,10 +42,10 @@ def check_requirements():
             missing_requirements.append(req_file)
 
     if missing_requirements:
-        print(f"❌ Missing requirements files: {missing_requirements}")
+        print(f" Missing requirements files: {missing_requirements}")
         return False
 
-    print("✅ Requirements files OK")
+    print(" Requirements files OK")
     return True
 
 def check_documentation():
@@ -62,15 +62,15 @@ def check_documentation():
             missing_docs.append(doc_file)
 
     if missing_docs:
-        print(f"❌ Missing documentation: {missing_docs}")
+        print(f" Missing documentation: {missing_docs}")
         return False
 
-    print("✅ Documentation OK")
+    print(" Documentation OK")
     return True
 
 def run_all_checks():
     """Run all QA checks"""
-    print("🔍 Running Quality Assurance Checks...")
+    print(" Running Quality Assurance Checks...")
 
     checks = [
         check_package_structure(),
@@ -79,10 +79,10 @@ def run_all_checks():
     ]
 
     if all(checks):
-        print("✅ All QA checks passed!")
+        print(" All QA checks passed!")
         return True
     else:
-        print("❌ Some QA checks failed!")
+        print(" Some QA checks failed!")
         return False
 
 if __name__ == "__main__":
